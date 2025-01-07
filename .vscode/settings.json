@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Rhythm Revolutions.sln"
+    "dotnet.defaultSolution": "RhythmRevolutions.sln"
 }
