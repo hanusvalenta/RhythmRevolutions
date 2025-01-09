@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public bool IsActive { get; private set; } = false; // Is the target activated?
-    public KeyCode activationKey; // Assign specific key for this target
-    private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer
+    public bool IsActive { get; private set; } = false;
+    public KeyCode activationKey;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -16,13 +16,12 @@ public class Target : MonoBehaviour
         }
         else
         {
-            UpdateColor(); // Set the initial color
+            UpdateColor();
         }
     }
 
     void Update()
     {
-        // Activate the target when the key is pressed
         if (Input.GetKeyDown(activationKey))
         {
             Activate();
@@ -34,8 +33,7 @@ public class Target : MonoBehaviour
         IsActive = true;
         UpdateColor();
 
-        // Deactivate after a short time
-        Invoke(nameof(Deactivate), 0.5f); // Adjust duration if necessary
+        Invoke(nameof(Deactivate), 0.2f);
     }
 
     void Deactivate()
@@ -48,7 +46,6 @@ public class Target : MonoBehaviour
     {
         if (spriteRenderer != null)
         {
-            // Set color based on the activation state
             spriteRenderer.color = IsActive ? Color.green : Color.red;
         }
     }
