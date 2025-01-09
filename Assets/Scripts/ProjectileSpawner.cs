@@ -1,17 +1,35 @@
 using UnityEngine;
 
-public class ProjectileSpawner : MonoBehaviour
+public class SpawnerController : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public float spawnInterval = 2f;
+    public Transform[] spawners;
+    public SpawnPattern spawnPattern;
 
-    void Start()
+    private float elapsedTime = 0f;
+    private int nextSpawnIndex = 0;
+
+    void Update()
     {
-        InvokeRepeating(nameof(SpawnProjectile), 0f, spawnInterval);
+        elapsedTime += Time.deltaTime;
+
+        while (nextSpawnIndex < spawnPattern.spawnData.Length &&
+               spawnPattern.spawnData[nextSpawnIndex].time <= elapsedTime)
+        {
+            SpawnProjectile(spawnPattern.spawnData[nextSpawnIndex]);
+            nextSpawnIndex++;
+        }
     }
 
-    void SpawnProjectile()
+    void SpawnProjectile(SpawnData data)
     {
-        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        if (data.spawnerIndex >= 0 && data.spawnerIndex < spawners.Length)
+        {
+            Instantiate(projectilePrefab, spawners[data.spawnerIndex].position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Invalid spawner index: " + data.spawnerIndex);
+        }
     }
 }
