@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("BasicEnemy") && interactionBubble != null)
+        if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
         {
             interactionBubble.SetActive(true);
         }
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("BasicEnemy") && interactionBubble != null)
+        if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
         {
             interactionBubble.SetActive(false);
         }
@@ -52,9 +52,9 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("BasicEnemy") && Input.GetKeyDown(KeyCode.E))
+        if (collision.CompareTag("MatthewPatel") && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene("BasicEnemyFightScene");
+            SceneManager.LoadScene("MatthewPatel");
         }
     }
 }
