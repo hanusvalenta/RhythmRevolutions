@@ -541,6 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBeforeFade: 0.75
   fadeDuration: 10
+  soundEffect: {fileID: 8300000, guid: ec2fb647838661f4fb25eab8165c0893, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

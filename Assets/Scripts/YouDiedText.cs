@@ -16,9 +16,18 @@ public class FadeInTMPText : MonoBehaviour
         SetTextAlpha(0f);
     }
 
+    public AudioClip soundEffect;
+
     void Start()
     {
         StartCoroutine(FadeInText());
+
+        if (soundEffect != null)
+        {
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.clip = soundEffect;
+            audioSource.Play();
+        }
     }
 
     IEnumerator FadeInText()
