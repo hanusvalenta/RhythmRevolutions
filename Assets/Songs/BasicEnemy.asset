@@ -21,9 +21,13 @@ MonoBehaviour:
     spawnerIndex: 2
   - time: 4
     spawnerIndex: 3
-  - time: 4.5
+  - time: 4.2222
     spawnerIndex: 3
   - time: 5
     spawnerIndex: 3
   - time: 5.5
     spawnerIndex: 3
+  - time: 6
+    spawnerIndex: 3
+  - time: 6
+    spawnerIndex: -26
