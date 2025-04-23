@@ -10,90 +10,174 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a17f0d54c8953e9459324174c4623c8b, type: 3}
-  m_Name: EasySong
+  m_Name: Pattel
   m_EditorClassIdentifier: 
   spawnData:
   - time: 0.5
-    spawnerIndex: 2 # Middle
+    spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 1.0
-    spawnerIndex: 1 # Left-middle
+    spawnerIndex: 1
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.5
   - time: 1.5
-    spawnerIndex: 3 # Right-middle
+    spawnerIndex: 3
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 2.0
-    spawnerIndex: 0 # Far Left
+    spawnerIndex: 0
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 0.75
   - time: 2.5
-    spawnerIndex: 4 # Far Right
+    spawnerIndex: 4
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 3.0
-    spawnerIndex: 2 # Middle
+    spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 4.0
-    spawnerIndex: 2 # Middle (hold a bit)
+    spawnerIndex: 2
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 2.0
   - time: 4.5
     spawnerIndex: 1
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 5.0
     spawnerIndex: 3
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 5.5
     spawnerIndex: 0
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.0
   - time: 6.0
     spawnerIndex: 4
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 7.0
     spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 8.0
     spawnerIndex: 1
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 0.5
   - time: 8.5
     spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 9.0
     spawnerIndex: 3
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 10.0
-    spawnerIndex: 2 # Middle (another hold)
+    spawnerIndex: 2
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.75
   - time: 10.5
     spawnerIndex: 0
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 11.0
     spawnerIndex: 4
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 12.0
     spawnerIndex: 1
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.25
   - time: 12.5
     spawnerIndex: 3
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 13.5
     spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 14.5
     spawnerIndex: 0
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 0.6
   - time: 15.0
     spawnerIndex: 1
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 15.5
     spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 16.0
     spawnerIndex: 3
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.1
   - time: 16.5
     spawnerIndex: 4
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 17.5
     spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 18.5
     spawnerIndex: 1
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 0.9
   - time: 19.0
     spawnerIndex: 3
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 20.0
     spawnerIndex: 0
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.5
   - time: 20.5
     spawnerIndex: 4
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 21.5
     spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 22.5
     spawnerIndex: 1
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 0.7
   - time: 23.0
     spawnerIndex: 3
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 24.0
     spawnerIndex: 0
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.3
   - time: 24.5
     spawnerIndex: 4
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 25.5
     spawnerIndex: 2
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 26.5
     spawnerIndex: 1
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.1
   - time: 27.0
     spawnerIndex: 3
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 28.0
     spawnerIndex: 0
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 0.8
   - time: 28.5
     spawnerIndex: 4
+    holdNote: 0 # Changed to 0 (false)
+    holdDuration: 0.0
   - time: 29.5
-    spawnerIndex: 2 # Final note in the middle
+    spawnerIndex: 2
+    holdNote: 1 # Changed to 1 (true)
+    holdDuration: 1.9

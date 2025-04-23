@@ -1,14 +1,16 @@
 using UnityEngine;
 
-[System.Serializable]
-public class SpawnData
-{
-    public float time;
-    public int spawnerIndex;
-}
+ [System.Serializable]
+ public class SpawnData
+ {
+     public float time;
+     public int spawnerIndex;
+     public bool holdNote;
+     public float holdDuration;
+ }
 
-[CreateAssetMenu(fileName = "NewSpawnPattern", menuName = "Spawn Pattern", order = 1)]
-public class SpawnPattern : ScriptableObject
-{
-    public SpawnData[] spawnData;
-}
+ [CreateAssetMenu(fileName = "NewSpawnPattern", menuName = "Spawn Pattern", order = 1)]
+ public class SpawnPattern : ScriptableObject
+ {
+     public SpawnData[] spawnData;
+ }
