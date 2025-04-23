@@ -57,7 +57,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Speed: 5
-    - _StaticIntensity: 0.1
+    - _StaticIntensity: 0.13
     m_Colors:
     - _NoiceScale: {r: 0.1, g: 0.05, b: 0, a: 0}
     - _StaticColorBlack: {r: 0, g: 0, b: 0, a: 0}
