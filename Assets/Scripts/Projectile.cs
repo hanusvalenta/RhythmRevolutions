@@ -3,14 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 5f; // Speed of the projectile
+    public float speed = 5f;
 
     void Update()
     {
-        // Move the projectile leftward
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
 
-        // Destroy if it goes off-screen
         if (transform.position.x < -10f)
         {
             LoadDeathScene();
@@ -24,7 +22,7 @@ public class Projectile : MonoBehaviour
             Target target = other.GetComponent<Target>();
             if (target != null && target.IsActive)
             {
-                Destroy(gameObject); // Destroy projectile if target is active
+                Destroy(gameObject);
             }
             else
             {
@@ -35,7 +33,6 @@ public class Projectile : MonoBehaviour
 
     void LoadDeathScene()
     {
-        // Replace "DeathScene" with your actual death scene name
         SceneManager.LoadScene("DeathScene");
     }
 }

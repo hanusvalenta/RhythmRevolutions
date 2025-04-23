@@ -8,7 +8,6 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        // Get the SpriteRenderer component
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null)
         {
