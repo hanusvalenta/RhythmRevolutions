@@ -8,11 +8,11 @@ using UnityEngine;
   private float holdDuration;
   private float holdTimer = 0f;
   private bool isHoldNote = false;
-  private Vector3 startPosition;
+  private Vector3 endPosition;
 
   void Start()
   {
-   startPosition = transform.position;
+   endPosition = transform.position;
   }
 
   public void InitializeHold(float duration)
@@ -27,8 +27,7 @@ using UnityEngine;
    holdIndicatorLine.endColor = Color.white;
    holdIndicatorLine.useWorldSpace = true;
 
-   // Create a simple white material in code
-   Material lineMaterial = new Material(Shader.Find("Unlit/Color")); // Use Unlit/Color shader
+   Material lineMaterial = new Material(Shader.Find("Unlit/Color"));
    lineMaterial.color = Color.white;
    holdIndicatorLine.material = lineMaterial;
   }
@@ -46,16 +45,29 @@ using UnityEngine;
    {
     UpdateHoldIndicator();
    }
+
+   if (Input.GetKeyDown(KeyCode.Space) && isHoldNote)
+   {
+    HoldSuccessful();
+   }
   }
 
   void UpdateHoldIndicator()
   {
    holdTimer += Time.deltaTime;
    float lineLength = holdDuration * speed;
-   Vector3 endPosition = startPosition + Vector3.down * Mathf.Clamp01(holdTimer / holdDuration) * lineLength;
+   Vector3 startPosition = endPosition + Vector3.up * Mathf.Clamp01(holdTimer / holdDuration) * lineLength;
 
    holdIndicatorLine.SetPosition(0, startPosition);
    holdIndicatorLine.SetPosition(1, endPosition);
+
+   endPosition = transform.position;
+  }
+
+  void HoldSuccessful()
+  {
+   holdIndicatorLine.enabled = false;
+   isHoldNote = false;
   }
 
   void OnTriggerEnter2D(Collider2D other)
