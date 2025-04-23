@@ -10,24 +10,90 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a17f0d54c8953e9459324174c4623c8b, type: 3}
-  m_Name: Pattel
+  m_Name: EasySong
   m_EditorClassIdentifier: 
   spawnData:
-  - time: 1
-    spawnerIndex: 0
-  - time: 2
+  - time: 0.5
+    spawnerIndex: 2 # Middle
+  - time: 1.0
+    spawnerIndex: 1 # Left-middle
+  - time: 1.5
+    spawnerIndex: 3 # Right-middle
+  - time: 2.0
+    spawnerIndex: 0 # Far Left
+  - time: 2.5
+    spawnerIndex: 4 # Far Right
+  - time: 3.0
+    spawnerIndex: 2 # Middle
+  - time: 4.0
+    spawnerIndex: 2 # Middle (hold a bit)
+  - time: 4.5
     spawnerIndex: 1
-  - time: 3
-    spawnerIndex: 2
-  - time: 4
-    spawnerIndex: 3
-  - time: 4.2222
-    spawnerIndex: 3
-  - time: 5
+  - time: 5.0
     spawnerIndex: 3
   - time: 5.5
+    spawnerIndex: 0
+  - time: 6.0
+    spawnerIndex: 4
+  - time: 7.0
+    spawnerIndex: 2
+  - time: 8.0
+    spawnerIndex: 1
+  - time: 8.5
+    spawnerIndex: 2
+  - time: 9.0
     spawnerIndex: 3
-  - time: 6
+  - time: 10.0
+    spawnerIndex: 2 # Middle (another hold)
+  - time: 10.5
+    spawnerIndex: 0
+  - time: 11.0
+    spawnerIndex: 4
+  - time: 12.0
+    spawnerIndex: 1
+  - time: 12.5
     spawnerIndex: 3
-  - time: 6
-    spawnerIndex: -26
+  - time: 13.5
+    spawnerIndex: 2
+  - time: 14.5
+    spawnerIndex: 0
+  - time: 15.0
+    spawnerIndex: 1
+  - time: 15.5
+    spawnerIndex: 2
+  - time: 16.0
+    spawnerIndex: 3
+  - time: 16.5
+    spawnerIndex: 4
+  - time: 17.5
+    spawnerIndex: 2
+  - time: 18.5
+    spawnerIndex: 1
+  - time: 19.0
+    spawnerIndex: 3
+  - time: 20.0
+    spawnerIndex: 0
+  - time: 20.5
+    spawnerIndex: 4
+  - time: 21.5
+    spawnerIndex: 2
+  - time: 22.5
+    spawnerIndex: 1
+  - time: 23.0
+    spawnerIndex: 3
+  - time: 24.0
+    spawnerIndex: 0
+  - time: 24.5
+    spawnerIndex: 4
+  - time: 25.5
+    spawnerIndex: 2
+  - time: 26.5
+    spawnerIndex: 1
+  - time: 27.0
+    spawnerIndex: 3
+  - time: 28.0
+    spawnerIndex: 0
+  - time: 28.5
+    spawnerIndex: 4
+  - time: 29.5
+    spawnerIndex: 2 # Final note in the middle

@@ -1,23 +1,55 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Linq;
 
 public class SpawnerController : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform[] spawners;
     public SpawnPattern spawnPattern;
+    public Button[] buttonsToUnhide = new Button[2];
+    public GameObject[] elementsToHide;
 
     private float elapsedTime = 0f;
     private int nextSpawnIndex = 0;
+    private bool hasSpawnedAll = false;
+    private float timeSinceLastSpawn = 0f;
+    private const float delayBeforeUnhide = 5f;
+
+    void Start()
+    {
+        buttonsToUnhide[0].gameObject.SetActive(false);
+        buttonsToUnhide[1].gameObject.SetActive(false);
+    }
 
     void Update()
     {
         elapsedTime += Time.deltaTime;
 
-        while (nextSpawnIndex < spawnPattern.spawnData.Length &&
-               spawnPattern.spawnData[nextSpawnIndex].time <= elapsedTime)
+        if (!hasSpawnedAll)
         {
-            SpawnProjectile(spawnPattern.spawnData[nextSpawnIndex]);
-            nextSpawnIndex++;
+            while (nextSpawnIndex < spawnPattern.spawnData.Length &&
+                   spawnPattern.spawnData[nextSpawnIndex].time <= elapsedTime)
+            {
+                SpawnProjectile(spawnPattern.spawnData[nextSpawnIndex]);
+                nextSpawnIndex++;
+                timeSinceLastSpawn = 0f;
+            }
+
+            if (nextSpawnIndex >= spawnPattern.spawnData.Length)
+            {
+                hasSpawnedAll = true;
+            }
+        }
+        else
+        {
+            timeSinceLastSpawn += Time.deltaTime;
+
+            if (timeSinceLastSpawn >= delayBeforeUnhide)
+            {
+                UnhideButtonsAndHideElements();
+            }
         }
     }
 
@@ -31,5 +63,18 @@ public class SpawnerController : MonoBehaviour
         {
             Debug.LogWarning("Invalid spawner index: " + data.spawnerIndex);
         }
+    }
+
+    void UnhideButtonsAndHideElements()
+    {
+        buttonsToUnhide[0].gameObject.SetActive(true);
+        buttonsToUnhide[1].gameObject.SetActive(true);
+
+        foreach (var element in elementsToHide)
+        {
+            element.SetActive(false);
+        }
+
+        this.enabled = false;
     }
 }
