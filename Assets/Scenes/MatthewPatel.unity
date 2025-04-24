@@ -2584,7 +2584,7 @@ Transform:
   m_GameObject: {fileID: 1855071657}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -683.99646, y: -344.8498, z: -0.5705018}
+  m_LocalPosition: {x: -683.99646, y: -344.8498, z: -1}
   m_LocalScale: {x: 4.297483, y: 3.7867892, z: 0.7139}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2632,7 +2632,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+  m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2726,7 +2726,6 @@ MonoBehaviour:
   fightButton: {fileID: 755556438}
   spareButton: {fileID: 344995171}
   fightSquare: {fileID: 1855071657}
-  expandedSquareSize: {x: 200, y: 200}
   playerHeartPrefab: {fileID: 6917283447140728380, guid: 160dfba75b5b30543a87840225fe2aa1, type: 3}
   heartSpawnPoint: {fileID: 1244577887}
 --- !u!1660057539 &9223372036854775807
