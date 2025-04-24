@@ -6,7 +6,7 @@ public class MenuManager : MonoBehaviour
     public GameObject fightButton;
     public GameObject spareButton;
 
-    public RectTransform fightSquare;
+    public GameObject fightSquare; 
     public Vector2 expandedSquareSize = new Vector2(200, 200);
     public GameObject playerHeartPrefab;
     public Transform heartSpawnPoint;
@@ -27,12 +27,19 @@ public class MenuManager : MonoBehaviour
     {
         HideButtons();
 
-        squareToExpand.sizeDelta = expandedSquareSize;
+        fightSquare.SetActive(true);
 
-        if (playerHeartPrefab != null)
+        RectTransform squareToExpand = fightSquare.GetComponent<RectTransform>();
+
+        if (squareToExpand != null)
         {
-            Vector3 spawnPosition = heartSpawnPoint != null ? heartSpawnPoint.position : squareToExpand.position;
-            Instantiate(playerHeartPrefab, spawnPosition, Quaternion.identity);
+             squareToExpand.sizeDelta = expandedSquareSize;
+
+             if (playerHeartPrefab != null)
+             {
+                 Vector3 spawnPosition = heartSpawnPoint != null ? heartSpawnPoint.position : squareToExpand.position;
+                 Instantiate(playerHeartPrefab, spawnPosition, Quaternion.identity);
+             }
         }
     }
 }
