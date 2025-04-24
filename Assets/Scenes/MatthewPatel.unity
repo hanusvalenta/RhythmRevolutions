@@ -2781,6 +2781,7 @@ GameObject:
   - component: {fileID: 2052946176}
   - component: {fileID: 2052946175}
   - component: {fileID: 2052946174}
+  - component: {fileID: 2052946177}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2838,6 +2839,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2052946177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052946173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350c549f39fe2a14b824c2ea2e6f74e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuMusic: {fileID: 0}
+  MusicVolume: 0.5
+  fightButton: {fileID: 755556438}
+  spareButton: {fileID: 344995171}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

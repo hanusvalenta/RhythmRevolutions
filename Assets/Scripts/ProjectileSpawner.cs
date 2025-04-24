@@ -85,17 +85,12 @@ public class SpawnerController : MonoBehaviour
     }
    }
   }
-  else
-  {
-   Debug.LogWarning("Invalid spawner index: " + data.spawnerIndex);
-  }
  }
 
  void EndHold()
  {
   isHolding = false;
   currentProjectile = null;
-  Debug.Log("Hold note ended!");
  }
 
  void UnhideButtonsAndHideElements()
