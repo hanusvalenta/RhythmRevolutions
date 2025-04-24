@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject fightSquare;
     public float fightSquareFadeDuration = 3f;
     public GameObject playerHeartPrefab;
-    public Transform heartSpawnPoint;
+    public GameObject heartSpawnPoint;
 
     public void HideButtons()
     {
@@ -54,5 +54,15 @@ public class MenuManager : MonoBehaviour
 
         color.a = 1f;
         sr.color = color;
+
+        SpawnPlayerHeart();
+    }
+
+    void SpawnPlayerHeart()
+    {
+        if (playerHeartPrefab != null && heartSpawnPoint != null)
+        {
+            Instantiate(playerHeartPrefab, heartSpawnPoint.transform.position, Quaternion.identity);
+        }
     }
 }
