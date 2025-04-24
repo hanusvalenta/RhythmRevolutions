@@ -10,10 +10,6 @@ public class PlayerHeartControler : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (rb == null)
-        {
-            Debug.LogError("Rigidbody2D component not found on the player!");
-        }
     }
 
     void Update()
