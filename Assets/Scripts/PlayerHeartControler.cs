@@ -7,6 +7,11 @@ public class PlayerHeartControler : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
 
+    private float minX = -2f;
+    private float maxX = 2f;
+    private float minY = -3.6f;
+    private float maxY = 0.15f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,37 +26,11 @@ public class PlayerHeartControler : MonoBehaviour
         movement = movement.normalized;
 
         rb.velocity = movement * moveSpeed;
-    }
 
-    void FixedUpdate()
-    {
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Barrier")
-        {
-            rb.velocity = Vector2.zero;
-
-            Vector2 normal = collision.contacts[0].normal;
-
-            Vector2 currentVelocity = rb.velocity;
-
-            Vector2 slideVelocity = currentVelocity - Vector2.Dot(currentVelocity, normal) * normal;
-            rb.velocity = slideVelocity;
-        }
-    }
-
-      void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Barrier")
-        {
-             Vector2 normal = collision.contacts[0].normal;
-
-            Vector2 currentVelocity = rb.velocity;
-
-            Vector2 slideVelocity = currentVelocity - Vector2.Dot(currentVelocity, normal) * normal;
-            rb.velocity = slideVelocity;
-        }
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, minX, maxX),
+            Mathf.Clamp(transform.position.y, minY, maxY),
+            transform.position.z
+        );
     }
 }
