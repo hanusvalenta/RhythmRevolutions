@@ -1,37 +1,17 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class MainMenuManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
-    public AudioClip MenuMusic;
-    public float MusicVolume = 0.5f;
-
     public GameObject fightButton;
     public GameObject spareButton;
 
-    private void Start()
-    {
-        if (MenuMusic != null)
-        {
-            AudioSource MenuMusicSource = gameObject.AddComponent<AudioSource>();
-            MenuMusicSource.clip = MenuMusic;
-            MenuMusicSource.loop = true;
-            MenuMusicSource.volume = MusicVolume;
-            MenuMusicSource.Play();
-        }
-    }
+    public RectTransform fightSquare;
+    public Vector2 expandedSquareSize = new Vector2(200, 200);
+    public GameObject playerHeartPrefab;
+    public Transform heartSpawnPoint;
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Game");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
-    public void HideBossButtons()
+    public void HideButtons()
     {
         fightButton.SetActive(false);
         spareButton.SetActive(false);
@@ -39,7 +19,20 @@ public class MainMenuManager : MonoBehaviour
 
     public void SparePattel()
     {
-        HideBossButtons();
+        HideButtons();
         GameManager.Instance.pattelSpared = true;
+    }
+
+    public void StartFight()
+    {
+        HideButtons();
+
+        squareToExpand.sizeDelta = expandedSquareSize;
+
+        if (playerHeartPrefab != null)
+        {
+            Vector3 spawnPosition = heartSpawnPoint != null ? heartSpawnPoint.position : squareToExpand.position;
+            Instantiate(playerHeartPrefab, spawnPosition, Quaternion.identity);
+        }
     }
 }
