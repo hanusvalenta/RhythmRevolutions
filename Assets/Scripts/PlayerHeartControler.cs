@@ -10,7 +10,7 @@ public class PlayerHeartControler : MonoBehaviour
     private float minX = -2f;
     private float maxX = 2f;
     private float minY = -3.6f;
-    private float maxY = 0.15f;
+    private float maxY = -0.15f;
 
     void Start()
     {
