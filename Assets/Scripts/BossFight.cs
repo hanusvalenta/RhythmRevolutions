@@ -25,9 +25,7 @@ using UnityEngine;
 
    if (nextEventIndex >= spawnEventsList.spawnEvents.Count)
    {
-    // Fight is complete
     fightStarted = false;
-    Debug.Log("Boss fight over");
    }
   }
 
@@ -43,10 +41,6 @@ using UnityEngine;
    if (spawnEvent.spawnerIndex >= 0 && spawnEvent.spawnerIndex < enemySpawners.Count)
    {
     enemySpawners[spawnEvent.spawnerIndex].SpawnEnemy(spawnEvent.enemyPrefabIndex, Quaternion.Euler(spawnEvent.rotation));
-   }
-   else
-   {
-    Debug.LogError("Invalid spawner index: " + spawnEvent.spawnerIndex);
    }
   }
  }

@@ -1,31 +1,39 @@
-using UnityEngine;
+ using UnityEngine;
+ 
 
-public class Enemy : MonoBehaviour
-{
-    public float speed = 3f;
-    public int health = 100;
+ public class Enemy : MonoBehaviour
+ {
+  public float speed = 3f;
+ 
 
-    public virtual void TakeDamage(int damage)
+  private Transform playerHeart;
+  private Vector2 targetPosition;
+ 
+
+  void Start()
+  {
+  GameObject playerHeartObject = GameObject.FindGameObjectWithTag("Player");
+    if (playerHeartObject != null)
     {
-        health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
+    playerHeart = playerHeartObject.transform;
+    targetPosition = playerHeart.position;
     }
+  }
+ 
 
-    public virtual void Die()
+  public virtual void Move()
+  {
+    if (playerHeart != null)
     {
-        Destroy(gameObject);
+    Vector3 newPosition = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    newPosition.z = -3.5f;
+    transform.position = newPosition;
     }
+  }
+ 
 
-    public virtual void Move()
-    {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
-    }
-
-    void Update()
-    {
-        Move();
-    }
-}
+  void Update()
+  {
+    Move();
+  }
+ }

@@ -13,6 +13,8 @@ public class MenuManager : MonoBehaviour
     public GameObject playerHeartPrefab;
     public GameObject heartSpawnPoint;
 
+    public GameObject BossFight;
+
     public void HideButtons()
     {
         fightButton.SetActive(false);
@@ -61,8 +63,9 @@ public class MenuManager : MonoBehaviour
     void SpawnPlayerHeart()
     {
         if (playerHeartPrefab != null && heartSpawnPoint != null)
-        {
-            Instantiate(playerHeartPrefab, heartSpawnPoint.transform.position, Quaternion.identity);
-        }
+    {
+        Instantiate(playerHeartPrefab, heartSpawnPoint.transform.position, Quaternion.identity);
+        BossFight.GetComponent<BossFight>().StartBossFight();
+    }
     }
 }
