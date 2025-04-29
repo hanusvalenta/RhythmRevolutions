@@ -1,39 +1,74 @@
- using UnityEngine;
- 
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
- public class Enemy : MonoBehaviour
- {
-  public float speed = 3f;
- 
+public class Enemy : MonoBehaviour
+{
+    public float speed = 3f;
+    public float overshootDistance = 1f;
+    private Transform playerHeart;
+    private Vector2 targetPosition;
+    private Vector2 overshootPosition;
+    private bool isOvershooting = false;
 
-  private Transform playerHeart;
-  private Vector2 targetPosition;
- 
-
-  void Start()
-  {
-  GameObject playerHeartObject = GameObject.FindGameObjectWithTag("Player");
-    if (playerHeartObject != null)
+    void Start()
     {
-    playerHeart = playerHeartObject.transform;
-    targetPosition = playerHeart.position;
+        GameObject playerHeartObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerHeartObject != null)
+        {
+            playerHeart = playerHeartObject.transform;
+            targetPosition = playerHeart.position;
+            CalculateOvershootPosition();
+        }
     }
-  }
- 
 
-  public virtual void Move()
-  {
-    if (playerHeart != null)
+    void CalculateOvershootPosition()
     {
-    Vector3 newPosition = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-    newPosition.z = -3.5f;
-    transform.position = newPosition;
+        if (playerHeart != null)
+        {
+            Vector2 direction = (playerHeart.position - transform.position).normalized;
+            overshootPosition = targetPosition + direction * overshootDistance;
+        }
     }
-  }
- 
 
-  void Update()
-  {
-    Move();
-  }
- }
+    public virtual void Move()
+    {
+        if (playerHeart != null)
+        {
+            if (!isOvershooting)
+            {
+                Vector3 newPosition = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                newPosition.z = -3.5f;
+                transform.position = newPosition;
+
+                if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+                {
+                    isOvershooting = true;
+                }
+            }
+            else
+            {
+                Vector3 newPosition = Vector2.MoveTowards(transform.position, overshootPosition, speed * Time.deltaTime);
+                newPosition.z = -3.5f;
+                transform.position = newPosition;
+
+                 if (Vector2.Distance(transform.position, overshootPosition) < 0.1f)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+    }
+
+    void Update()
+    {
+        Move();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("DeathScene");
+        }
+    }
+}
