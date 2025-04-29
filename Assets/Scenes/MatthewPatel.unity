@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7871122119578949781, guid: 9dca20775bf13b84789b4ac20ed81932, type: 3}
+  - {fileID: 7871122119578949781, guid: 651ea8726592e764f9dfffa64677f0bb, type: 3}
 --- !u!1 &202920773
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7871122119578949781, guid: 9dca20775bf13b84789b4ac20ed81932, type: 3}
+  - {fileID: 7871122119578949781, guid: 651ea8726592e764f9dfffa64677f0bb, type: 3}
 --- !u!1 &230839800
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7871122119578949781, guid: 9dca20775bf13b84789b4ac20ed81932, type: 3}
+  - {fileID: 7871122119578949781, guid: 651ea8726592e764f9dfffa64677f0bb, type: 3}
 --- !u!1 &828404194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,6 +1454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7871122119578949781, guid: 9dca20775bf13b84789b4ac20ed81932, type: 3}
+  - {fileID: 7871122119578949781, guid: 651ea8726592e764f9dfffa64677f0bb, type: 3}
 --- !u!1 &1554883937
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7871122119578949781, guid: 9dca20775bf13b84789b4ac20ed81932, type: 3}
+  - {fileID: 7871122119578949781, guid: 651ea8726592e764f9dfffa64677f0bb, type: 3}
 --- !u!1 &1680659243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7871122119578949781, guid: 9dca20775bf13b84789b4ac20ed81932, type: 3}
+  - {fileID: 7871122119578949781, guid: 651ea8726592e764f9dfffa64677f0bb, type: 3}
 --- !u!1 &1724116853
 GameObject:
   m_ObjectHideFlags: 0
