@@ -29,3 +29,7 @@ MonoBehaviour:
     spawnerIndex: 6
     enemyPrefabIndex: 3
     rotation: {x: 0, y: 0, z: 0}
+  - time: 5
+    spawnerIndex: 11
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}

@@ -7,10 +7,10 @@ public class PlayerHeartControler : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
 
-    private float minX = -2f;
-    private float maxX = 2f;
-    private float minY = -3.6f;
-    private float maxY = -0.15f;
+    public float minX = -2f;
+    public float maxX = 2f;
+    public float minY = -3.6f;
+    public float maxY = -0.15f;
 
     void Start()
     {

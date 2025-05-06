@@ -172,3 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  minX: -2.6
+  maxX: 2.6
+  minY: -3.3
+  maxY: -0.35
