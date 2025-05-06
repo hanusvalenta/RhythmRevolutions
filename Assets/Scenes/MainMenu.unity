@@ -731,8 +731,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291611852
-  m_fontColor: {r: 0.8000001, g: 0.8000001, b: 0.8000001, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -935,8 +935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350c549f39fe2a14b824c2ea2e6f74e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuMusic: {fileID: 8300000, guid: d700f7aa218a0f64bb0bdd0660fcb6b5, type: 3}
-  MusicVolume: 0.1
+  fightButton: {fileID: 0}
+  spareButton: {fileID: 0}
+  fightSquare: {fileID: 0}
+  fightSquareFadeDuration: 3
+  playerHeartPrefab: {fileID: 0}
+  heartSpawnPoint: {fileID: 0}
+  BossFight: {fileID: 0}
 --- !u!4 &1119020744
 Transform:
   m_ObjectHideFlags: 0
@@ -1152,8 +1157,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291348164
-  m_fontColor: {r: 0.7686275, g: 0.77647066, b: 0.7843138, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

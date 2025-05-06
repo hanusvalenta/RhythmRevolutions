@@ -13,7 +13,7 @@ public class Enemy4 : MonoBehaviour
     public virtual void Move()
     {
         Vector3 newPosition = transform.position;
-        newPosition.y -= speed * Time.deltaTime;
+        newPosition.y += speed * Time.deltaTime;
         newPosition.z = -3.5f;
         transform.position = newPosition;
     }
