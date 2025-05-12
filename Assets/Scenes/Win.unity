@@ -504,8 +504,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290559164
-  m_fontColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -586,7 +586,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBeforeFade: 0.75
   fadeDuration: 10
-  soundEffect: {fileID: 8300000, guid: ec2fb647838661f4fb25eab8165c0893, type: 3}
+  volume: 0.5
+  soundEffect: {fileID: 8300000, guid: ec65f810a53fa88429db6af65dc4e454, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

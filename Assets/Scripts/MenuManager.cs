@@ -15,6 +15,8 @@ public class MenuManager : MonoBehaviour
 
     public GameObject BossFight;
 
+    public string sceneName = "Game";
+
     public void HideButtons()
     {
         fightButton.SetActive(false);
@@ -67,5 +69,15 @@ public class MenuManager : MonoBehaviour
         Instantiate(playerHeartPrefab, heartSpawnPoint.transform.position, Quaternion.identity);
         BossFight.GetComponent<BossFight>().StartBossFight();
     }
+    }
+
+    public void LoadGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

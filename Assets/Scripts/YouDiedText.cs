@@ -7,6 +7,7 @@ public class FadeInTMPText : MonoBehaviour
 {
     public float delayBeforeFade = 0.5f;
     public float fadeDuration = 2f;
+    public float volume = 1f;
 
     private TextMeshProUGUI tmpText;
 
@@ -26,6 +27,7 @@ public class FadeInTMPText : MonoBehaviour
         {
             AudioSource audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.clip = soundEffect;
+            audioSource.volume = volume;
             audioSource.Play();
         }
     }
