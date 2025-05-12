@@ -1,12 +1,16 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class FadeInTMPText : MonoBehaviour
 {
     public float delayBeforeFade = 0.5f;
     public float fadeDuration = 2f;
+    public float delayBeforeButton = 0.5f;
+    public GameObject buttonToShow;
+    public AudioClip soundEffect;
     public float volume = 1f;
 
     private TextMeshProUGUI tmpText;
@@ -15,9 +19,12 @@ public class FadeInTMPText : MonoBehaviour
     {
         tmpText = GetComponent<TextMeshProUGUI>();
         SetTextAlpha(0f);
-    }
 
-    public AudioClip soundEffect;
+        if (buttonToShow != null)
+        {
+            buttonToShow.SetActive(false);
+        }
+    }
 
     void Start()
     {
@@ -46,6 +53,13 @@ public class FadeInTMPText : MonoBehaviour
         }
 
         SetTextAlpha(1f);
+
+        yield return new WaitForSeconds(delayBeforeButton);
+
+        if (buttonToShow != null)
+        {
+            buttonToShow.SetActive(true);
+        }
     }
 
     void SetTextAlpha(float alpha)
