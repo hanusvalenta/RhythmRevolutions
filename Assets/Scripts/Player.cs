@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         movement = movement.normalized;
+
+        Camera.main.transform.position = Vector3.Lerp(
+            Camera.main.transform.position,
+            new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z),
+            Time.deltaTime * 5f
+        );
     }
 
     void FixedUpdate()
