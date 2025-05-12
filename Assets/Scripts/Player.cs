@@ -49,17 +49,18 @@ public class Player : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision)
+{
+    if (!allowedMovementTags.Contains(collision.tag))
     {
-        if (!allowedMovementTags.Contains(collision.tag))
-        {
-            canMove = false;
-        }
-
-        if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
-        {
-            interactionBubble.SetActive(true);
-        }
+        canMove = false;
+        ResolveCollision(collision);
     }
+
+    if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
+    {
+        interactionBubble.SetActive(true);
+    }
+}
 
     void OnTriggerExit2D(Collider2D collision)
     {
@@ -72,6 +73,14 @@ public class Player : MonoBehaviour
         {
             interactionBubble.SetActive(false);
         }
+    }
+
+    void ResolveCollision(Collider2D collision)
+    {
+        Vector2 direction = (transform.position - collision.transform.position).normalized;
+
+        float pushDistance = 0.1f;
+        transform.Translate(direction * pushDistance);
     }
 
     void OnTriggerStay2D(Collider2D collision)
