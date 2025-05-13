@@ -80,4 +80,14 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Discord()
+    {
+        Application.OpenURL("http://discordapp.com/users/1088489927739703336");
+    }
+    
+    public void ItchIO()
+    {
+        Application.OpenURL("https://hanusvalenta.itch.io/understory");
+    }
 }
