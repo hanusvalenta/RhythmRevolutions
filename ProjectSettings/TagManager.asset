@@ -8,6 +8,7 @@ TagManager:
   - MatthewPatel
   - Barrier
   - Ground
+  - PlayerHealth
   layers:
   - Default
   - TransparentFX
