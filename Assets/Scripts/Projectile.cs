@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
 
         if (transform.position.x < -10f)
         {
-            LoadDeathScene();
+            PlayerTakeDamage();
         }
 
         if (isHoldNote)
@@ -81,13 +81,22 @@ public class Projectile : MonoBehaviour
             }
             else
             {
-                LoadDeathScene();
+                PlayerTakeDamage();
+                Destroy(gameObject);
             }
         }
     }
 
-    void LoadDeathScene()
+    void PlayerTakeDamage()
     {
-        SceneManager.LoadScene("DeathScene");
+        GameObject playerHealthTextObject = GameObject.Find("PlayerHealth");
+        if (playerHealthTextObject != null)
+        {
+            HealthText healthText = playerHealthTextObject.GetComponent<HealthText>();
+            if (healthText != null)
+            {
+                healthText.TakeDamage(10);
+            }
+        }
     }
 }
