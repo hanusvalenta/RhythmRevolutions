@@ -45,7 +45,7 @@ public class Target : MonoBehaviour
     {
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = IsActive ? Color.blue : Color.white;
+            spriteRenderer.color = IsActive ? Color.gray : Color.white;
         }
     }
 }
