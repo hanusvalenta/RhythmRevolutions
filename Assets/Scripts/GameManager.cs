@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public bool pattelSpared = false;
+    public bool pattelFight = false;
 
     private void Awake()
     {

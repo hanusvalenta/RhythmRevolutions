@@ -1,46 +1,64 @@
 using UnityEngine;
- using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
- public class BossFight : MonoBehaviour
- {
-  public List<EnemySpawner> enemySpawners;
-  public EnemySpawnEventList spawnEventsList;
+public class BossFight : MonoBehaviour
+{
+    public List<EnemySpawner> enemySpawners;
+    public EnemySpawnEventList spawnEventsList;
 
-  private float elapsedTime = 0f;
-  private int nextEventIndex = 0;
-  private bool fightStarted = false;
+    private float elapsedTime = 0f;
+    private int nextEventIndex = 0;
+    private bool fightStarted = false;
+    private bool fightEnded = false;
 
-  void Update()
-  {
-   if (!fightStarted)
-    return;
+    void Update()
+    {
+        if (!fightStarted)
+            return;
 
-   elapsedTime += Time.deltaTime;
+        elapsedTime += Time.deltaTime;
 
-   if (nextEventIndex < spawnEventsList.spawnEvents.Count && elapsedTime >= spawnEventsList.spawnEvents[nextEventIndex].time)
-   {
-    SpawnEnemy(spawnEventsList.spawnEvents[nextEventIndex]);
-    nextEventIndex++;
-   }
+        if (nextEventIndex < spawnEventsList.spawnEvents.Count && elapsedTime >= spawnEventsList.spawnEvents[nextEventIndex].time)
+        {
+            SpawnEnemy(spawnEventsList.spawnEvents[nextEventIndex]);
+            nextEventIndex++;
+        }
 
-   if (nextEventIndex >= spawnEventsList.spawnEvents.Count)
-   {
-    fightStarted = false;
-   }
-  }
+        if (nextEventIndex >= spawnEventsList.spawnEvents.Count && !fightEnded)
+        {
+            fightEnded = true;
+            fightStarted = false;
+            StartCoroutine(EndFightSequence());
+        }
+    }
 
-  public void StartBossFight()
-  {
-   fightStarted = true;
-   elapsedTime = 0f;
-   nextEventIndex = 0;
-  }
+    public void StartBossFight()
+    {
+        fightStarted = true;
+        fightEnded = false;
+        elapsedTime = 0f;
+        nextEventIndex = 0;
+    }
 
-  void SpawnEnemy(EnemySpawnEvent spawnEvent)
-  {
-   if (spawnEvent.spawnerIndex >= 0 && spawnEvent.spawnerIndex < enemySpawners.Count)
-   {
-    enemySpawners[spawnEvent.spawnerIndex].SpawnEnemy(spawnEvent.enemyPrefabIndex, Quaternion.Euler(spawnEvent.rotation));
-   }
-  }
- }
+    void SpawnEnemy(EnemySpawnEvent spawnEvent)
+    {
+        if (spawnEvent.spawnerIndex >= 0 && spawnEvent.spawnerIndex < enemySpawners.Count)
+        {
+            enemySpawners[spawnEvent.spawnerIndex].SpawnEnemy(spawnEvent.enemyPrefabIndex, Quaternion.Euler(spawnEvent.rotation));
+        }
+    }
+
+    private IEnumerator EndFightSequence()
+    {
+        yield return new WaitForSeconds(5f);
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.pattelSpared = false;
+        }
+
+        SceneManager.LoadScene("Game");
+    }
+}
