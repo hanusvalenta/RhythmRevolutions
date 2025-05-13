@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class HealthText : MonoBehaviour
 {
     private TextMeshProUGUI healthText;
-    private int playerHealth = 30;
+    public int playerHealth = 30;
     public string deathSceneName = "DeathScene";
 
     void Start()

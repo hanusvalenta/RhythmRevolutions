@@ -1326,8 +1326,8 @@ GameObject:
   - component: {fileID: 1298863409}
   - component: {fileID: 1298863412}
   - component: {fileID: 1298863411}
-  - component: {fileID: 1298863410}
   - component: {fileID: 1298863413}
+  - component: {fileID: 1298863410}
   m_Layer: 5
   m_Name: PlayerHealth
   m_TagString: PlayerHealth
@@ -1366,6 +1366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dc4ebd0621dce46964620a1a287048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 30
   deathSceneName: DeathScene
 --- !u!114 &1298863411
 MonoBehaviour:

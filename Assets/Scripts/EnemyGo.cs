@@ -68,7 +68,21 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("DeathScene");
+            PlayerTakeDamage();
+            Destroy(gameObject);
+        }
+    }
+
+    void PlayerTakeDamage()
+    {
+        GameObject playerHealthTextObject = GameObject.Find("PlayerHealth");
+        if (playerHealthTextObject != null)
+        {
+            HealthText healthText = playerHealthTextObject.GetComponent<HealthText>();
+            if (healthText != null)
+            {
+                healthText.TakeDamage(10);
+            }
         }
     }
 }
