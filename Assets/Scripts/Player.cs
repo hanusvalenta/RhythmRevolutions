@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     private bool canMove = true;
 
+    public GameObject fadeObject;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -87,7 +89,14 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("MatthewPatel") && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene("MatthewPatel");
+            if (fadeObject != null)
+            {
+                Fade fade = fadeObject.GetComponent<Fade>();
+                if (fade != null)
+                {
+                    fade.FadeIn("MatthewPatel");
+                }
+            }
         }
     }
 }

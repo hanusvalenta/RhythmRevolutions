@@ -13,6 +13,8 @@ public class BossFight : MonoBehaviour
     private bool fightStarted = false;
     private bool fightEnded = false;
 
+    public GameObject fadeObject;
+
     void Update()
     {
         if (!fightStarted)
@@ -59,6 +61,13 @@ public class BossFight : MonoBehaviour
             GameManager.Instance.pattelSpared = false;
         }
 
-        SceneManager.LoadScene("Game");
+        if (fadeObject != null)
+        {
+            Fade fade = fadeObject.GetComponent<Fade>();
+            if (fade != null)
+            {
+                fade.FadeIn("Game");
+            }
+        }
     }
 }

@@ -224,6 +224,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5250421619816538015, guid: a439e1c43d078fe4da4681f1b09e61d4, type: 3}
   m_PrefabInstance: {fileID: 43353285}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &43353287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8899554515855555527, guid: a439e1c43d078fe4da4681f1b09e61d4, type: 3}
+  m_PrefabInstance: {fileID: 43353285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &270335301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1249,7 @@ MonoBehaviour:
   allowedMovementTags:
   - Ground
   - MatthewPatel
+  fadeObject: {fileID: 43353287}
 --- !u!50 &1922759561
 Rigidbody2D:
   serializedVersion: 4

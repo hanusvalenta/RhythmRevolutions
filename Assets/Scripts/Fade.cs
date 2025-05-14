@@ -23,8 +23,9 @@ public class Fade : MonoBehaviour
         
     }
 
-    public void FadeIn()
+    public void FadeIn(string sceneToLoadName)
     {
+        this.sceneToLoadName = sceneToLoadName;
         StartCoroutine(PerformFade(sceneToLoadName));
     }
 

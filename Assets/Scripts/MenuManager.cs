@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour
 
     public string sceneName = "Game";
 
+    public GameObject fadeObject;
+
     public void HideButtons()
     {
         fightButton.SetActive(false);
@@ -26,7 +28,17 @@ public class MenuManager : MonoBehaviour
     public void SparePattel()
     {
         HideButtons();
+
         GameManager.Instance.pattelSpared = true;
+
+        if (fadeObject != null)
+        {
+            Fade fade = fadeObject.GetComponent<Fade>();
+            if (fade != null)
+            {
+                fade.FadeIn("Game");
+            }
+        }
     }
 
     public void StartFight()
