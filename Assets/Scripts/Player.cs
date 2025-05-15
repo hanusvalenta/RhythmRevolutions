@@ -19,9 +19,12 @@ public class Player : MonoBehaviour
 
     public TextBox textBox;
 
+    private Collider2D playerCollider;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
         if (interactionBubble != null)
         {
             interactionBubble.SetActive(false);
@@ -83,16 +86,25 @@ public class Player : MonoBehaviour
 
     void ResolveCollision(Collider2D collision)
     {
+        if (playerCollider == null) return;
+
         Vector2 direction = (transform.position - collision.transform.position).normalized;
-        float pushDistance = 0.07f;
-        int maxIterations = 10;
+        float pushDistance = 0.01f;
+        int maxIterations = 100;
         int currentIteration = 0;
 
-        while (collision.IsTouching(GetComponent<Collider2D>()) && currentIteration < maxIterations)
+        while (playerCollider.IsTouching(collision) && currentIteration < maxIterations)
         {
             transform.Translate(direction * pushDistance);
             currentIteration++;
+
+            if (currentIteration >= maxIterations)
+            {
+                break;
+            }
         }
+
+        rb.velocity = Vector2.zero;
     }
 
     void OnTriggerStay2D(Collider2D collision)
