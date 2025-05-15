@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     public GameObject fadeObject;
 
+    private Vector2 currentVelocity;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,22 +49,22 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        rb.velocity = Vector2.SmoothDamp(rb.velocity, movement * moveSpeed, ref currentVelocity, 0.1f);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
-{
-    if (!allowedMovementTags.Contains(collision.tag))
     {
-        canMove = false;
-        ResolveCollision(collision);
-    }
+        if (!allowedMovementTags.Contains(collision.tag))
+        {
+            canMove = false;
+            ResolveCollision(collision);
+        }
 
-    if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
-    {
-        interactionBubble.SetActive(true);
+        if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
+        {
+            interactionBubble.SetActive(true);
+        }
     }
-}
 
     void OnTriggerExit2D(Collider2D collision)
     {
