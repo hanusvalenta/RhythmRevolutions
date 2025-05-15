@@ -1372,6 +1372,7 @@ MonoBehaviour:
   playerSpriteRenderer: {fileID: 1737204427}
   shakeIntensity: 0.1
   shakeDuration: 0.2
+  playerHeartDeadSprite: {fileID: 21300000, guid: 14855f1bdaafd40458e07d5e65f0bfa6, type: 3}
 --- !u!114 &1298863411
 MonoBehaviour:
   m_ObjectHideFlags: 0

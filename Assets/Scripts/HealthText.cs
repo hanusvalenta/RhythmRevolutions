@@ -16,6 +16,10 @@ public class HealthText : MonoBehaviour
     public float shakeIntensity = 0.1f;
     public float shakeDuration = 0.2f;
 
+    public Sprite playerHeartDeadSprite;
+
+    public AudioClip playerDieSound;
+
     void Start()
     {
         healthText = GetComponent<TextMeshProUGUI>();
@@ -50,6 +54,38 @@ public class HealthText : MonoBehaviour
 
     void Die()
     {
+        GameObject playerHeart = GameObject.FindWithTag("Player");
+
+        if (playerHeart != null)
+        {
+            SpriteRenderer heartRenderer = playerHeart.GetComponent<SpriteRenderer>();
+            if (heartRenderer != null && playerHeartDeadSprite != null)
+            {
+                heartRenderer.sprite = playerHeartDeadSprite;
+            }
+
+            Rigidbody2D rb = playerHeart.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = Vector2.zero;
+                rb.isKinematic = true;
+            }
+
+            MonoBehaviour[] scripts = playerHeart.GetComponents<MonoBehaviour>();
+            foreach (var script in scripts)
+            {
+                if (script != this)
+                {
+                    script.enabled = false;
+                }
+            }
+        }
+
+        if (playerDieSound != null)
+        {
+            AudioSource.PlayClipAtPoint(playerDieSound, Camera.main.transform.position);
+        }
+
         if (fadeObject != null)
         {
             Fade fade = fadeObject.GetComponent<Fade>();
