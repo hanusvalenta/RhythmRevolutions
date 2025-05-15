@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
-    public GameObject interactionBubble;
+    public List<GameObject> interactionBubbles = new List<GameObject>();
 
     public List<string> allowedMovementTags = new List<string>() { "Ground" };
 
@@ -25,9 +25,13 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
-        if (interactionBubble != null)
+        if (interactionBubbles != null)
         {
-            interactionBubble.SetActive(false);
+            foreach (var bubble in interactionBubbles)
+            {
+                if (bubble != null)
+                    bubble.SetActive(false);
+            }
         }
     }
 
@@ -65,9 +69,13 @@ public class Player : MonoBehaviour
             ResolveCollision(collision);
         }
 
-        if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
+        if (allowedMovementTags.Contains(collision.tag) && interactionBubbles != null)
         {
-            interactionBubble.SetActive(true);
+            foreach (var bubble in interactionBubbles)
+            {
+                if (bubble != null)
+                    bubble.SetActive(true);
+            }
         }
     }
 
@@ -78,9 +86,13 @@ public class Player : MonoBehaviour
             canMove = true;
         }
 
-        if (collision.CompareTag("MatthewPatel") && interactionBubble != null)
+        if (allowedMovementTags.Contains(collision.tag) && interactionBubbles != null)
         {
-            interactionBubble.SetActive(false);
+            foreach (var bubble in interactionBubbles)
+            {
+                if (bubble != null)
+                    bubble.SetActive(false);
+            }
         }
     }
 
@@ -125,6 +137,15 @@ public class Player : MonoBehaviour
                     fade.FadeIn("MatthewPatel");
                 }
             }
+        }
+
+        if (collision.CompareTag("Wallace") && Input.GetKeyDown(KeyCode.E))
+        {
+            if (textBox != null && !textBox.gameObject.activeSelf)
+            {
+                textBox.gameObject.SetActive(true);
+            }
+            textBox.ShowText("Hey, Scott! Im here to help you out. Lets go!");
         }
     }
 }
