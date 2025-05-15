@@ -84,9 +84,20 @@ public class Player : MonoBehaviour
     void ResolveCollision(Collider2D collision)
     {
         Vector2 direction = (transform.position - collision.transform.position).normalized;
-
         float pushDistance = 0.1f;
-        transform.Translate(direction * pushDistance);
+        int maxIterations = 10;
+        int currentIteration = 0;
+
+        while (collision.IsTouching(GetComponent<Collider2D>()) && currentIteration < maxIterations)
+        {
+            transform.Translate(direction * pushDistance);
+            currentIteration++;
+        }
+
+        if (currentIteration >= maxIterations)
+        {
+            Debug.LogWarning("Player.ResolveCollision:  Maximum push iterations exceeded. Player may still be stuck.");
+        }
     }
 
     void OnTriggerStay2D(Collider2D collision)
