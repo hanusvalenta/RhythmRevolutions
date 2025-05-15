@@ -20,6 +20,8 @@ public class HealthText : MonoBehaviour
 
     public AudioClip playerDieSound;
 
+    public AudioClip playerDamageSound;
+
     void Start()
     {
         healthText = GetComponent<TextMeshProUGUI>();
@@ -40,6 +42,11 @@ public class HealthText : MonoBehaviour
     {
         playerHealth -= damage;
         UpdateHealthText();
+
+        if (playerDamageSound != null)
+        {
+            AudioSource.PlayClipAtPoint(playerDamageSound, Camera.main.transform.position);
+        }
 
         if (playerSpriteRenderer != null)
         {

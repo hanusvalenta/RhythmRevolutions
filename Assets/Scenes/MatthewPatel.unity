@@ -1380,6 +1380,7 @@ MonoBehaviour:
   shakeDuration: 0.2
   playerHeartDeadSprite: {fileID: 21300000, guid: 14855f1bdaafd40458e07d5e65f0bfa6, type: 3}
   playerDieSound: {fileID: 8300000, guid: 7c4e4ac54b59ed747b992c1d175a5481, type: 3}
+  playerDamageSound: {fileID: 8300000, guid: f5e723484203fc9498de09e156ac38dc, type: 3}
 --- !u!114 &1298863411
 MonoBehaviour:
   m_ObjectHideFlags: 0
