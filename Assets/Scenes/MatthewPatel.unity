@@ -1368,6 +1368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 30
   deathSceneName: DeathScene
+  fadeObject: {fileID: 1580833224}
   playerSpriteRenderer: {fileID: 1737204427}
   shakeIntensity: 0.1
   shakeDuration: 0.2

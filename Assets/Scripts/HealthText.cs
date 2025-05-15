@@ -9,6 +9,8 @@ public class HealthText : MonoBehaviour
     public int playerHealth = 30;
     public string deathSceneName = "DeathScene";
 
+    public GameObject fadeObject;
+
     public SpriteRenderer playerSpriteRenderer;
     private Vector3 originalPosition;
     public float shakeIntensity = 0.1f;
@@ -48,7 +50,14 @@ public class HealthText : MonoBehaviour
 
     void Die()
     {
-        SceneManager.LoadScene(deathSceneName);
+        if (fadeObject != null)
+        {
+            Fade fade = fadeObject.GetComponent<Fade>();
+            if (fade != null)
+            {
+                fade.FadeIn(deathSceneName);
+            }
+        }
     }
 
     IEnumerator Shake()
