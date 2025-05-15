@@ -9,6 +9,7 @@ TagManager:
   - Barrier
   - Ground
   - PlayerHealth
+  - TextBox
   layers:
   - Default
   - TransparentFX
