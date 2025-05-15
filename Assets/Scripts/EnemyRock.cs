@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections; // Required for Coroutines
+using System.Collections;
 
 public class EnemyRock : MonoBehaviour
 {
@@ -15,9 +15,9 @@ public class EnemyRock : MonoBehaviour
     public GameObject prefab2;
     public GameObject prefab3;
     
-    public Vector3 spawnPosition1;
-    public Vector3 spawnPosition2;
-    public Vector3 spawnPosition3;
+    public Transform spawnPoint1;
+    public Transform spawnPoint2;
+    public Transform spawnPoint3;
 
 
     void Start()
@@ -37,17 +37,20 @@ public class EnemyRock : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        if (prefab1 != null)
+        if (prefab1 != null && spawnPoint1 != null)
         {
-            Instantiate(prefab1, transform.position + spawnPosition1, Quaternion.identity);
+            GameObject obj1 = Instantiate(prefab1, spawnPoint1.position, Quaternion.identity);
+            obj1.transform.localScale *= 0.5f;
         }
-        if (prefab2 != null)
+        if (prefab2 != null && spawnPoint2 != null)
         {
-            Instantiate(prefab2, transform.position + spawnPosition2, Quaternion.identity);
+            GameObject obj2 = Instantiate(prefab2, spawnPoint2.position, Quaternion.identity);
+            obj2.transform.localScale *= 0.5f;
         }
-        if (prefab3 != null)
+        if (prefab3 != null && spawnPoint3 != null)
         {
-            Instantiate(prefab3, transform.position + spawnPosition3, Quaternion.identity);
+            GameObject obj3 = Instantiate(prefab3, spawnPoint3.position, Quaternion.identity);
+            obj3.transform.localScale *= 0.5f;
         }
 
         Destroy(gameObject);
