@@ -1385,6 +1385,7 @@ MonoBehaviour:
   - Ground
   - MatthewPatel
   fadeObject: {fileID: 43353287}
+  textBox: {fileID: 2108763014}
 --- !u!50 &1922759561
 Rigidbody2D:
   serializedVersion: 4

@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     private Vector2 currentVelocity;
 
+    public TextBox textBox;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -91,6 +93,12 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("MatthewPatel") && Input.GetKeyDown(KeyCode.E))
         {
+            if (textBox != null && !textBox.gameObject.activeSelf)
+            {
+                textBox.gameObject.SetActive(true);
+            }
+            textBox.ShowText("So, you’ve come to fight me? Let's see what you've got.");
+
             if (fadeObject != null)
             {
                 Fade fade = fadeObject.GetComponent<Fade>();

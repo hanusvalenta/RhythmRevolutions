@@ -84,7 +84,8 @@ public class TextBox : MonoBehaviour
         {
             int length = Mathf.Min(maxChars, text.Length - currentIndex);
 
-            int lastSpace = text.LastIndexOf(' ', currentIndex + length);
+            int lastSpaceSearchIndex = Mathf.Min(currentIndex + length, text.Length - 1);
+            int lastSpace = text.LastIndexOf(' ', lastSpaceSearchIndex);
             if (lastSpace > currentIndex && lastSpace < currentIndex + length)
             {
                 length = lastSpace - currentIndex;
