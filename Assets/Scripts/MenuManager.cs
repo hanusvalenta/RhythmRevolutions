@@ -29,7 +29,7 @@ public class MenuManager : MonoBehaviour
     {
         HideButtons();
 
-        GameManager.Instance.pattelSpared = true;
+        GameManager.Instance.SparedBoss();
 
         if (fadeObject != null)
         {

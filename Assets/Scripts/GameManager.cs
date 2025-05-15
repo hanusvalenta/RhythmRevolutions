@@ -5,8 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public bool pattelSpared = false;
-    public bool pattelFight = false;
+    public bool PatelSpared = false;
+    public bool PatelFought = false;
 
     private void Awake()
     {
@@ -18,6 +18,35 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void FoughtBoss()
+    {
+        string bossName = SceneManager.GetActiveScene().name;
+
+        var sparedField = GetType().GetField(bossName + "Spared");
+        var foughtField = GetType().GetField(bossName + "Fought");
+        if (sparedField != null)
+            sparedField.SetValue(this, false);
+        if (foughtField != null)
+            foughtField.SetValue(this, true);
+    }
+
+    public void SparedBoss()
+    {
+        string bossName = SceneManager.GetActiveScene().name;
+
+        var sparedField = GetType().GetField(bossName + "Spared");
+        var foughtField = GetType().GetField(bossName + "Fought");
+        if (sparedField != null)
+        {
+            sparedField.SetValue(this, true);
+        }
+            
+        if (foughtField != null)
+        {
+            foughtField.SetValue(this, false);
         }
     }
 }

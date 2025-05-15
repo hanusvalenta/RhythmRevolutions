@@ -58,7 +58,7 @@ public class BossFight : MonoBehaviour
 
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.pattelSpared = false;
+            GameManager.Instance.FoughtBoss();
         }
 
         if (fadeObject != null)

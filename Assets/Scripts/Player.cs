@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
                 Fade fade = fadeObject.GetComponent<Fade>();
                 if (fade != null)
                 {
-                    fade.FadeIn("MatthewPatel");
+                    fade.FadeIn("Patel");
                 }
             }
         }

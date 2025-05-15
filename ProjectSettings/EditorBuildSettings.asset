@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 33171adc25243714d86a71005e808579
   - enabled: 1
-    path: Assets/Scenes/MatthewPatel.unity
+    path: Assets/Scenes/Patel.unity
     guid: d217f64ed32d02d45bbb41df0af5c400
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
