@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 906079916}
   - component: {fileID: 906079915}
   m_Layer: 0
-  m_Name: BasicEnemy
+  m_Name: Patel
   m_TagString: MatthewPatel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
