@@ -15,6 +15,8 @@ public class TextBox : MonoBehaviour
     private bool isTyping = false;
     private bool isDialogueActive = false;
 
+    public AudioClip typingSound;
+
     void Start()
     {
         textBoxUI.SetActive(false);
@@ -63,6 +65,10 @@ public class TextBox : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;
+            if (typingSound != null)
+            {
+                AudioSource.PlayClipAtPoint(typingSound, Camera.main.transform.position);
+            }
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
 

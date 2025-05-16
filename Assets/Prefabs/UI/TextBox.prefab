@@ -197,6 +197,7 @@ MonoBehaviour:
   dialogueText: {fileID: 3558953360978356735}
   typingSpeed: 0.05
   maxCharactersPerPage: 200
+  typingSound: {fileID: 8300000, guid: 6ac3b16b4f3fd954cbd3493c8a92346d, type: 3}
 --- !u!1 &7653024924677027794
 GameObject:
   m_ObjectHideFlags: 0
