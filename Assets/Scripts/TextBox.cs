@@ -18,6 +18,15 @@ public class TextBox : MonoBehaviour
     void Start()
     {
         textBoxUI.SetActive(false);
+        if (textBoxUI.TryGetComponent<CanvasGroup>(out var cg))
+        {
+            cg.blocksRaycasts = false;
+        }
+        else
+        {
+            var cgNew = textBoxUI.AddComponent<CanvasGroup>();
+            cgNew.blocksRaycasts = false;
+        }
         dialogueText.text = "";
     }
 

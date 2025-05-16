@@ -13,39 +13,9 @@ MonoBehaviour:
   m_Name: Patel
   m_EditorClassIdentifier: 
   spawnData:
-  - time: 1
-    spawnerIndex: 0
-    holdNote: 0
-    holdDuration: 0
-  - time: 2
-    spawnerIndex: 1
-    holdNote: 0
-    holdDuration: 0
-  - time: 3
+  - time: 0
     spawnerIndex: 2
     holdNote: 0
     holdDuration: 0
-  - time: 4
-    spawnerIndex: 3
-    holdNote: 0
-    holdDuration: 0
-  - time: 4.2222
-    spawnerIndex: 3
-    holdNote: 0
-    holdDuration: 0
-  - time: 5
-    spawnerIndex: 3
-    holdNote: 0
-    holdDuration: 0
-  - time: 5.5
-    spawnerIndex: 3
-    holdNote: 0
-    holdDuration: 0
-  - time: 6
-    spawnerIndex: 3
-    holdNote: 0
-    holdDuration: 0
-  - time: 6
-    spawnerIndex: -26
-    holdNote: 0
-    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
