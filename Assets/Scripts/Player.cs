@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
                     else
                     {
                         playerSpriteRenderer.sprite = moveRightSprite;
-                        playerSpriteRenderer.flipX = true;
+                        playerSpriteRenderer.flipX = false;
                     }
                 }
                 else
