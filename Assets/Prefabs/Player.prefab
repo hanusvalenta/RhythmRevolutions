@@ -108,11 +108,20 @@ MonoBehaviour:
   fadeObject: {fileID: 0}
   textBox: {fileID: 0}
   playerSpriteRenderer: {fileID: 3269120409582130930}
-  idleSprite: {fileID: 21300000, guid: d3b11341247193a448ea052f8e686a41, type: 3}
-  moveUpSprite: {fileID: 21300000, guid: e1c9713d90fe32d4aa06cbc216266dda, type: 3}
-  moveDownSprite: {fileID: 21300000, guid: 1cbb71b30667cfd43802549b9608c973, type: 3}
-  moveLeftSprite: {fileID: 21300000, guid: 713dcbab9e71ef443bcf66806cbc5873, type: 3}
-  moveRightSprite: {fileID: 21300000, guid: 83199209c84106c4c887f9b634d19b37, type: 3}
+  idleSprite: {fileID: 21300000, guid: 857377ec710171942bb0196a3707fb4c, type: 3}
+  moveUpSprite1: {fileID: 21300000, guid: f6b5b623c5ca28747b224a5c23bdd546, type: 3}
+  moveUpSprite2: {fileID: 21300000, guid: f6b5b623c5ca28747b224a5c23bdd546, type: 3}
+  moveUpSprite3: {fileID: 21300000, guid: f6b5b623c5ca28747b224a5c23bdd546, type: 3}
+  moveDownSprite1: {fileID: 21300000, guid: 779047605fe722147982b760a143d2ea, type: 3}
+  moveDownSprite2: {fileID: 21300000, guid: 779047605fe722147982b760a143d2ea, type: 3}
+  moveDownSprite3: {fileID: 21300000, guid: 779047605fe722147982b760a143d2ea, type: 3}
+  moveLeftSprite1: {fileID: 21300000, guid: f80e5b0882d8def4aadd27324d2de263, type: 3}
+  moveLeftSprite2: {fileID: 21300000, guid: ab37a8e745a48d94488ff96c9b343854, type: 3}
+  moveLeftSprite3: {fileID: 21300000, guid: 9510703258a606f429c7733ec3d5b037, type: 3}
+  moveRightSprite1: {fileID: 21300000, guid: faca03b09cef39a42a26ef4aac15f61a, type: 3}
+  moveRightSprite2: {fileID: 21300000, guid: 355a578fffc70a046a1c81f12b8d3e3f, type: 3}
+  moveRightSprite3: {fileID: 21300000, guid: acd3c012f3119bd4caea8253276f4044, type: 3}
+  animationSpeed: 0.1
 --- !u!50 &7146455537911737635
 Rigidbody2D:
   serializedVersion: 4

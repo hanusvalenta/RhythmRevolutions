@@ -22,11 +22,25 @@ public class Player : MonoBehaviour
     private Collider2D playerCollider;
 
     public SpriteRenderer playerSpriteRenderer;
+
     public Sprite idleSprite;
-    public Sprite moveUpSprite;
-    public Sprite moveDownSprite;
-    public Sprite moveLeftSprite;
-    public Sprite moveRightSprite;
+    public Sprite moveUpSprite1;
+    public Sprite moveUpSprite2;
+    public Sprite moveUpSprite3;
+    public Sprite moveDownSprite1;
+    public Sprite moveDownSprite2;
+    public Sprite moveDownSprite3;
+    public Sprite moveLeftSprite1;
+    public Sprite moveLeftSprite2;
+    public Sprite moveLeftSprite3;
+    public Sprite moveRightSprite1;
+    public Sprite moveRightSprite2;
+    public Sprite moveRightSprite3;
+
+    private float animationTimer = 0f;
+    public float animationSpeed = 0.1f;
+    private int currentFrame = 0;
+    private Vector2 lastMovement = Vector2.zero;
 
     void Start()
     {
@@ -72,36 +86,63 @@ public class Player : MonoBehaviour
         {
             if (movement.magnitude > 0)
             {
-                if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+                animationTimer += Time.deltaTime;
+
+                if (movement != lastMovement)
                 {
-                    if (movement.x < 0)
-                    {
-                        playerSpriteRenderer.sprite = moveLeftSprite;
-                        playerSpriteRenderer.flipX = false;
-                    }
-                    else
-                    {
-                        playerSpriteRenderer.sprite = moveRightSprite;
-                        playerSpriteRenderer.flipX = false;
-                    }
+                    animationTimer = 0f;
+                    currentFrame = 0;
+                    lastMovement = movement;
                 }
-                else
+
+                if (animationTimer >= animationSpeed)
                 {
-                    if (movement.y > 0)
+                    animationTimer = 0f;
+                    currentFrame = (currentFrame + 1) % 3;
+
+                    if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
                     {
-                        playerSpriteRenderer.sprite = moveUpSprite;
+                        if (movement.x < 0)
+                        {
+                            if (currentFrame == 0) playerSpriteRenderer.sprite = moveLeftSprite1;
+                            else if (currentFrame == 1) playerSpriteRenderer.sprite = moveLeftSprite2;
+                            else playerSpriteRenderer.sprite = moveLeftSprite3;
+                            playerSpriteRenderer.flipX = false;
+                        }
+                        else
+                        {
+                            if (currentFrame == 0) playerSpriteRenderer.sprite = moveRightSprite1;
+                            else if (currentFrame == 1) playerSpriteRenderer.sprite = moveRightSprite2;
+                            else playerSpriteRenderer.sprite = moveRightSprite3;
+                            playerSpriteRenderer.flipX = false;
+                        }
                     }
                     else
                     {
-                        playerSpriteRenderer.sprite = moveDownSprite;
+                        if (movement.y > 0)
+                        {
+                            if (currentFrame == 0) playerSpriteRenderer.sprite = moveUpSprite1;
+                            else if (currentFrame == 1) playerSpriteRenderer.sprite = moveUpSprite2;
+                            else playerSpriteRenderer.sprite = moveUpSprite3;
+                            playerSpriteRenderer.flipX = false;
+                        }
+                        else
+                        {
+                            if (currentFrame == 0) playerSpriteRenderer.sprite = moveDownSprite1;
+                            else if (currentFrame == 1) playerSpriteRenderer.sprite = moveDownSprite2;
+                            else playerSpriteRenderer.sprite = moveDownSprite3;
+                            playerSpriteRenderer.flipX = false;
+                        }
                     }
-                    playerSpriteRenderer.flipX = false;
                 }
             }
             else
             {
                 playerSpriteRenderer.sprite = idleSprite;
                 playerSpriteRenderer.flipX = false;
+                currentFrame = 0;
+                animationTimer = 0f;
+                lastMovement = Vector2.zero;
             }
         }
     }
