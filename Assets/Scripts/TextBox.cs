@@ -18,6 +18,7 @@ public class TextBox : MonoBehaviour
     void Start()
     {
         textBoxUI.SetActive(false);
+        dialogueText.text = "";
     }
 
     void Update()
@@ -70,6 +71,7 @@ public class TextBox : MonoBehaviour
         else
         {
             textBoxUI.SetActive(false);
+            dialogueText.text = "";
             Time.timeScale = 1f;
             isDialogueActive = false;
         }

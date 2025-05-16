@@ -17,3 +17,18 @@ MonoBehaviour:
     spawnerIndex: 2
     holdNote: 0
     holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 0.3
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: This is a simple note... Press the corresponding string or youll
+      get damage.
+  - time: 2
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: This is a hold note.
