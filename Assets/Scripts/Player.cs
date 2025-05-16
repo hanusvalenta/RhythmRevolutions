@@ -21,10 +21,23 @@ public class Player : MonoBehaviour
 
     private Collider2D playerCollider;
 
+    public SpriteRenderer playerSpriteRenderer;
+    public Sprite idleSprite;
+    public Sprite moveUpSprite;
+    public Sprite moveDownSprite;
+    public Sprite moveLeftSprite;
+    public Sprite moveRightSprite;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        if (playerSpriteRenderer == null)
+        {
+            Debug.LogError("Player SpriteRenderer not found!");
+        }
+
         if (interactionBubbles != null)
         {
             foreach (var bubble in interactionBubbles)
@@ -54,6 +67,43 @@ public class Player : MonoBehaviour
             new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z),
             Time.deltaTime * 5f
         );
+
+        if (playerSpriteRenderer != null)
+        {
+            if (movement.magnitude > 0)
+            {
+                if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+                {
+                    if (movement.x < 0)
+                    {
+                        playerSpriteRenderer.sprite = moveLeftSprite;
+                        playerSpriteRenderer.flipX = false;
+                    }
+                    else
+                    {
+                        playerSpriteRenderer.sprite = moveRightSprite;
+                        playerSpriteRenderer.flipX = true;
+                    }
+                }
+                else
+                {
+                    if (movement.y > 0)
+                    {
+                        playerSpriteRenderer.sprite = moveUpSprite;
+                    }
+                    else
+                    {
+                        playerSpriteRenderer.sprite = moveDownSprite;
+                    }
+                    playerSpriteRenderer.flipX = false;
+                }
+            }
+            else
+            {
+                playerSpriteRenderer.sprite = idleSprite;
+                playerSpriteRenderer.flipX = false;
+            }
+        }
     }
 
     void FixedUpdate()
