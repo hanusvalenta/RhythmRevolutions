@@ -6,7 +6,7 @@ using System.Collections;
 public class HealthText : MonoBehaviour
 {
     private TextMeshProUGUI healthText;
-    public int playerHealth = 30;
+    public float playerHealth;
     public string deathSceneName = "DeathScene";
 
     public GameObject fadeObject;
@@ -24,6 +24,16 @@ public class HealthText : MonoBehaviour
 
     void Start()
     {
+        GameObject gameManagerObj = GameObject.Find("GameData");
+        if (gameManagerObj != null)
+        {
+            GameManager gameManager = gameManagerObj.GetComponent<GameManager>();
+            if (gameManager != null)
+            {
+                playerHealth = gameManager.PlayerHealth;
+            }
+        }
+
         healthText = GetComponent<TextMeshProUGUI>();
         UpdateHealthText();
 
