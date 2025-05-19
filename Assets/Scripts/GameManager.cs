@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public bool PatelSpared = false;
     public bool PatelFought = false;
 
+    public bool WallaceSpared = false;
+    public bool WallaceFought = false;
+
     private void Awake()
     {
         if (Instance == null)
