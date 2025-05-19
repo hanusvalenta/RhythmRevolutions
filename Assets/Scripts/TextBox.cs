@@ -9,6 +9,7 @@ public class TextBox : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public float typingSpeed = 0.05f;
     public int maxCharactersPerPage = 200;
+    public float speakingVolume = 0.05f;
 
     private List<string> pages = new List<string>();
     private int currentPageIndex = 0;
@@ -67,7 +68,7 @@ public class TextBox : MonoBehaviour
             dialogueText.text += letter;
             if (typingSound != null)
             {
-                AudioSource.PlayClipAtPoint(typingSound, Camera.main.transform.position);
+                AudioSource.PlayClipAtPoint(typingSound, Camera.main.transform.position, speakingVolume);
             }
             yield return new WaitForSecondsRealtime(typingSpeed);
         }

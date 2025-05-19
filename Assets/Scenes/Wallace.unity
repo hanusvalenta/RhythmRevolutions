@@ -1812,6 +1812,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7863273183235782899, guid: 29baea690e7347d49981425e010394a4, type: 3}
+      propertyPath: speakingVolume
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8470481370189085542, guid: 29baea690e7347d49981425e010394a4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3898,6 +3902,8 @@ MonoBehaviour:
   BossFight: {fileID: 1657523889}
   sceneName: Game
   fadeObject: {fileID: 1580833224}
+  textToShowOnSpare: Okay or maybe spare me. Whatever...
+  textBox: {fileID: 1429900791}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

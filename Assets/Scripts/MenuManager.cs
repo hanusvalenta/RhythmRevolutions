@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -19,6 +19,18 @@ public class MenuManager : MonoBehaviour
 
     public GameObject fadeObject;
 
+    public string textToShowOnSpare;
+
+    public TextBox textBox;
+
+    void Start()
+    {
+        if (textBox == null)
+        {
+            textBox = FindObjectOfType<TextBox>();
+        }
+    }
+
     public void HideButtons()
     {
         fightButton.SetActive(false);
@@ -29,6 +41,11 @@ public class MenuManager : MonoBehaviour
     {
         HideButtons();
 
+        if (textBox != null && !string.IsNullOrEmpty(textToShowOnSpare))
+        {
+            textBox.ShowText(textToShowOnSpare);
+        }
+
         GameManager.Instance.SparedBoss();
 
         if (fadeObject != null)
@@ -38,6 +55,10 @@ public class MenuManager : MonoBehaviour
             {
                 fade.FadeIn("Game");
             }
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
         }
     }
 
@@ -77,10 +98,13 @@ public class MenuManager : MonoBehaviour
     void SpawnPlayerHeart()
     {
         if (playerHeartPrefab != null && heartSpawnPoint != null)
-    {
-        Instantiate(playerHeartPrefab, heartSpawnPoint.transform.position, Quaternion.identity);
-        BossFight.GetComponent<BossFight>().StartBossFight();
-    }
+        {
+            Instantiate(playerHeartPrefab, heartSpawnPoint.transform.position, Quaternion.identity);
+            if (BossFight != null && BossFight.GetComponent<BossFight>() != null)
+            {
+                BossFight.GetComponent<BossFight>().StartBossFight();
+            }
+        }
     }
 
     public void LoadGame()
