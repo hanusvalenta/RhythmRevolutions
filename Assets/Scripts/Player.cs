@@ -216,34 +216,56 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("MatthewPatel") && Input.GetKeyDown(KeyCode.E))
         {
-            if (textBox != null)
+            if (GameManager.Instance.PatelFought == true || GameManager.Instance.PatelSpared == true)
             {
-                textBox.ShowText("So, you’ve come to fight me? Let's see what you've got.");
-            }
-
-            if (fadeObject != null)
-            {
-                Fade fade = fadeObject.GetComponent<Fade>();
-                if (fade != null)
+                if (textBox != null)
                 {
-                    fade.FadeIn("Patel"); 
+                    textBox.ShowText("What do you want, Scott? I already fought you.");
+                }
+            }
+            
+            else
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("So, you’ve come to fight me? Let's see what you've got.");
+                }
+
+                if (fadeObject != null)
+                {
+                    Fade fade = fadeObject.GetComponent<Fade>();
+                    if (fade != null)
+                    {
+                        fade.FadeIn("Patel");
+                    }
                 }
             }
         }
 
         if (collision.CompareTag("Wallace") && Input.GetKeyDown(KeyCode.E))
         {
-            if (textBox != null)
+            if (GameManager.Instance.WallaceSpared == true || GameManager.Instance.WallaceFought == true)
             {
-                textBox.ShowText("Hey, Scott! Im here to help you out. Lets learn some moves to find Ramona.");
-            }
-
-            if (fadeObject != null)
-            {
-                Fade fade = fadeObject.GetComponent<Fade>();
-                if (fade != null)
+                if (textBox != null)
                 {
-                    fade.FadeIn("Wallace"); 
+                    textBox.ShowText("Were done here, Scott. Now go find Ramona.");
+                }
+            }
+            
+            else
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("Hey, Scott! Im here to help you out. Lets learn some moves to find Ramona.");
+                }
+
+                if (fadeObject != null)
+                {
+                    Fade fade = fadeObject.GetComponent<Fade>();
+                    if (fade != null)
+                    {
+                        fade.FadeIn("Wallace");
+                    }
                 }
             }
         }
