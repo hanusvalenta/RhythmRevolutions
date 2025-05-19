@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public bool WallaceSpared = false;
     public bool WallaceFought = false;
 
+    public bool CatInteracted = false;
+
     public static Vector3? lastPlayerPosition;
     public static string lastPlayerScene;
 

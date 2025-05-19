@@ -240,7 +240,7 @@ public class Player : MonoBehaviour
                     textBox.ShowText("What do you want, Scott? I already fought you.");
                 }
             }
-            
+
             else
             {
                 if (textBox != null)
@@ -268,7 +268,7 @@ public class Player : MonoBehaviour
                     textBox.ShowText("Were done here, Scott. Now go find Ramona.");
                 }
             }
-            
+
             else
             {
                 if (textBox != null)
@@ -284,6 +284,27 @@ public class Player : MonoBehaviour
                         fade.FadeIn("Wallace");
                     }
                 }
+            }
+        }
+        
+        if (collision.CompareTag("Cat") && Input.GetKeyDown(KeyCode.E))
+        {
+            if (GameManager.Instance.CatInteracted == true)
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("Meaow. Again...");
+                }
+            }
+
+            else
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("Meaow.");
+                }
+
+                GameManager.Instance.CatInteracted = true;
             }
         }
     }
