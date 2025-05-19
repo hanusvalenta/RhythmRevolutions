@@ -2824,6 +2824,8 @@ MonoBehaviour:
   bossSpriteRenderer: {fileID: 230839801}
   shakeIntensity: 0.1
   shakeDuration: 0.5
+  bossMusic: {fileID: 8300000, guid: aeea999c718d17e419ea82ba67678703, type: 3}
+  musicVolume: 0.01
 --- !u!4 &1657523891
 Transform:
   m_ObjectHideFlags: 0

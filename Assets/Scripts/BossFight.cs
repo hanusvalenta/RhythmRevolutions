@@ -23,11 +23,33 @@ public class BossFight : MonoBehaviour
     private float lastEnemySpawnTime = -1f;
     private bool endingSequenceHasBegun = false;
 
+    public AudioClip bossMusic;
+    [Range(0f, 1f)] // This will make it a slider in the Inspector
+    public float musicVolume = 0.75f; // Default volume
+    private AudioSource audioSource;
+
     void Start()
     {
         if (textBox == null)
         {
             textBox = FindObjectOfType<TextBox>();
+        }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        if (bossMusic != null && audioSource != null)
+        {
+            audioSource.clip = bossMusic;
+            audioSource.loop = true;
+            audioSource.volume = musicVolume; // Set the volume from the editor variable
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
     }
 
@@ -156,6 +178,11 @@ public class BossFight : MonoBehaviour
 
         fightEnded = true;
         fightStarted = false;
+
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
 
         if (GameManager.Instance != null)
         {
