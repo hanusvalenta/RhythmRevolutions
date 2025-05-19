@@ -235,7 +235,16 @@ public class Player : MonoBehaviour
         {
             if (textBox != null)
             {
-                textBox.ShowText("Hey, Scott! Im here to help you out. Lets go!");
+                textBox.ShowText("Hey, Scott! Im here to help you out. Lets learn some moves to find Ramona.");
+            }
+
+            if (fadeObject != null)
+            {
+                Fade fade = fadeObject.GetComponent<Fade>();
+                if (fade != null)
+                {
+                    fade.FadeIn("Wallace"); 
+                }
             }
         }
     }
