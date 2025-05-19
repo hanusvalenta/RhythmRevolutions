@@ -2573,6 +2573,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3122767419680264753, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3754855400118834648, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: m_LocalPosition.x
       value: -979.92
@@ -2638,6 +2642,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 43353287}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: loopVolume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: interactionBubble
       value: 
       objectReference: {fileID: 0}
@@ -2645,6 +2653,10 @@ PrefabInstance:
       propertyPath: maxCollisionChecks
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: backgroundMusicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d700f7aa218a0f64bb0bdd0660fcb6b5, type: 3}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: collisionCheckInterval
       value: 0.005

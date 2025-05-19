@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -34,6 +35,11 @@ public class Player : MonoBehaviour
     private Vector2 lastMovement = Vector2.zero;
     public string gameSceneName = "Game";
 
+    public AudioClip backgroundMusicClip;
+    private AudioSource audioSource;
+
+    public float loopVolume = 0.01f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,6 +48,17 @@ public class Player : MonoBehaviour
         if (playerSpriteRenderer == null)
         {
             playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        audioSource = GetComponent<AudioSource>();
+
+        if (backgroundMusicClip != null && audioSource != null)
+        {
+            audioSource.clip = backgroundMusicClip;
+            audioSource.loop = true;
+            audioSource.playOnAwake = false;
+            audioSource.volume = loopVolume;
+            audioSource.Play();
         }
 
         if (GameManager.Instance != null && GameManager.lastPlayerPosition.HasValue)
