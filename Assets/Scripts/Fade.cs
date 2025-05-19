@@ -13,6 +13,8 @@ public class Fade : MonoBehaviour
 
     public float fadeTime = 1f;
     
+    public string gameSceneName = "Game";
+
     void Start()
     {
         
@@ -23,18 +25,28 @@ public class Fade : MonoBehaviour
         
     }
 
-    public void FadeIn(string sceneToLoadName)
+    public void FadeIn(string sceneToLoad)
     {
-        this.sceneToLoadName = sceneToLoadName;
-        StartCoroutine(PerformFade(sceneToLoadName));
+        this.sceneToLoadName = sceneToLoad;
+        StartCoroutine(PerformFade(sceneToLoad));
     }
 
-    IEnumerator PerformFade(string sceneToLoadName)
+    IEnumerator PerformFade(string targetSceneName)
     {
         fadeAnimator.SetTrigger(fadeInTrigger);
 
+        if (GameManager.Instance != null)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null && SceneManager.GetActiveScene().name == gameSceneName) 
+            {
+                GameManager.lastPlayerPosition = playerObject.transform.position;
+                GameManager.lastPlayerScene = SceneManager.GetActiveScene().name;
+            }
+        }
+
         yield return new WaitForSeconds(fadeTime);
 
-        SceneManager.LoadScene(sceneToLoadName);
+        SceneManager.LoadScene(targetSceneName);
     }
 }

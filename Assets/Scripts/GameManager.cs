@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public bool WallaceSpared = false;
     public bool WallaceFought = false;
 
+    public static Vector3? lastPlayerPosition;
+    public static string lastPlayerScene;
+
     private void Awake()
     {
         if (Instance == null)

@@ -8,21 +8,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public List<GameObject> interactionBubbles = new List<GameObject>();
-
     public List<string> allowedMovementTags = new List<string>() { "Ground" };
-
     private bool canMove = true;
-
     public GameObject fadeObject;
-
     private Vector2 currentVelocity;
-
     public TextBox textBox;
-
     private Collider2D playerCollider;
-
     public SpriteRenderer playerSpriteRenderer;
-
     public Sprite idleSprite;
     public Sprite moveUpSprite1;
     public Sprite moveUpSprite2;
@@ -36,20 +28,37 @@ public class Player : MonoBehaviour
     public Sprite moveRightSprite1;
     public Sprite moveRightSprite2;
     public Sprite moveRightSprite3;
-
     private float animationTimer = 0f;
     public float animationSpeed = 0.1f;
     private int currentFrame = 0;
     private Vector2 lastMovement = Vector2.zero;
+    public string gameSceneName = "Game";
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
-        playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        
         if (playerSpriteRenderer == null)
         {
-            Debug.LogError("Player SpriteRenderer not found!");
+            playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        if (GameManager.Instance != null && GameManager.lastPlayerPosition.HasValue)
+        {
+            if (SceneManager.GetActiveScene().name == gameSceneName &&
+                GameManager.lastPlayerScene == gameSceneName)
+            {
+                transform.position = GameManager.lastPlayerPosition.Value;
+                
+                GameManager.lastPlayerPosition = null;
+                GameManager.lastPlayerScene = null;
+            }
+            else if (GameManager.lastPlayerScene != gameSceneName)
+            {
+                GameManager.lastPlayerPosition = null;
+                GameManager.lastPlayerScene = null;
+            }
         }
 
         if (interactionBubbles != null)
@@ -76,11 +85,14 @@ public class Player : MonoBehaviour
 
         movement = movement.normalized;
 
-        Camera.main.transform.position = Vector3.Lerp(
-            Camera.main.transform.position,
-            new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z),
-            Time.deltaTime * 5f
-        );
+        if (Camera.main != null)
+        {
+            Camera.main.transform.position = Vector3.Lerp(
+                Camera.main.transform.position,
+                new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z),
+                Time.deltaTime * 5f
+            );
+        }
 
         if (playerSpriteRenderer != null)
         {
@@ -98,48 +110,43 @@ public class Player : MonoBehaviour
                 if (animationTimer >= animationSpeed)
                 {
                     animationTimer = 0f;
-                    currentFrame = (currentFrame + 1) % 3;
+                    currentFrame = (currentFrame + 1) % 3; 
 
-                    if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+                    if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y)) 
                     {
-                        if (movement.x < 0)
+                        if (movement.x < 0) 
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveLeftSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveLeftSprite2;
                             else playerSpriteRenderer.sprite = moveLeftSprite3;
-                            playerSpriteRenderer.flipX = false;
                         }
-                        else
+                        else 
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveRightSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveRightSprite2;
                             else playerSpriteRenderer.sprite = moveRightSprite3;
-                            playerSpriteRenderer.flipX = false;
                         }
                     }
-                    else
+                    else 
                     {
-                        if (movement.y > 0)
+                        if (movement.y > 0) 
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveUpSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveUpSprite2;
                             else playerSpriteRenderer.sprite = moveUpSprite3;
-                            playerSpriteRenderer.flipX = false;
                         }
-                        else
+                        else 
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveDownSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveDownSprite2;
                             else playerSpriteRenderer.sprite = moveDownSprite3;
-                            playerSpriteRenderer.flipX = false;
                         }
                     }
                 }
             }
             else
             {
-                playerSpriteRenderer.sprite = idleSprite;
-                playerSpriteRenderer.flipX = false;
+                playerSpriteRenderer.sprite = idleSprite; 
                 currentFrame = 0;
                 animationTimer = 0f;
                 lastMovement = Vector2.zero;
@@ -149,15 +156,15 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = Vector2.SmoothDamp(rb.velocity, movement * moveSpeed, ref currentVelocity, 0.1f);
+        rb.velocity = Vector2.SmoothDamp(rb.velocity, movement * moveSpeed, ref currentVelocity, 0.05f); 
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!allowedMovementTags.Contains(collision.tag))
         {
-            canMove = false;
-            ResolveCollision(collision);
+            canMove = false; 
+            ResolveCollision(collision); 
         }
 
         if (allowedMovementTags.Contains(collision.tag) && interactionBubbles != null)
@@ -186,57 +193,50 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    
     void ResolveCollision(Collider2D collision)
     {
-        if (playerCollider == null) return;
+        if (playerCollider == null || collision == null) return;
 
-        Vector2 direction = (transform.position - collision.transform.position).normalized;
-        float pushDistance = 0.01f;
-        int maxIterations = 100;
-        int currentIteration = 0;
+        ColliderDistance2D colliderDistance = playerCollider.Distance(collision);
 
-        while (playerCollider.IsTouching(collision) && currentIteration < maxIterations)
+        if (colliderDistance.isOverlapped)
         {
-            transform.Translate(direction * pushDistance);
-            currentIteration++;
-
-            if (currentIteration >= maxIterations)
+            Vector2 directionToPush = (Vector2)transform.position - colliderDistance.pointB; 
+            if (directionToPush == Vector2.zero) 
             {
-                break;
+                directionToPush = Vector2.up; 
             }
+            transform.Translate(directionToPush.normalized * 0.01f); 
         }
-
-        rb.velocity = Vector2.zero;
+        rb.velocity = Vector2.zero; 
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("MatthewPatel") && Input.GetKeyDown(KeyCode.E))
         {
-            if (textBox != null && !textBox.gameObject.activeSelf)
+            if (textBox != null)
             {
-                textBox.gameObject.SetActive(true);
+                textBox.ShowText("So, you’ve come to fight me? Let's see what you've got.");
             }
-            textBox.ShowText("So, you’ve come to fight me? Let's see what you've got.");
 
             if (fadeObject != null)
             {
                 Fade fade = fadeObject.GetComponent<Fade>();
                 if (fade != null)
                 {
-                    fade.FadeIn("Patel");
+                    fade.FadeIn("Patel"); 
                 }
             }
         }
 
         if (collision.CompareTag("Wallace") && Input.GetKeyDown(KeyCode.E))
         {
-            if (textBox != null && !textBox.gameObject.activeSelf)
+            if (textBox != null)
             {
-                textBox.gameObject.SetActive(true);
+                textBox.ShowText("Hey, Scott! Im here to help you out. Lets go!");
             }
-            textBox.ShowText("Hey, Scott! Im here to help you out. Lets go!");
         }
     }
 }
