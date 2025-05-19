@@ -10,6 +10,11 @@ public class BossFight : MonoBehaviour
     public TextBox textBox;
     public GameObject fadeObject;
 
+    public SpriteRenderer bossSpriteRenderer;
+    public float shakeIntensity = 0.1f;
+    public float shakeDuration = 0.5f;
+    private Vector3 originalBossPosition;
+
     private float elapsedTime = 0f;
     private int nextEventIndex = 0;
     private bool fightStarted = false;
@@ -34,8 +39,12 @@ public class BossFight : MonoBehaviour
         nextEventIndex = 0;
         endingSequenceHasBegun = false;
 
+        if (bossSpriteRenderer != null)
+        {
+            originalBossPosition = bossSpriteRenderer.transform.localPosition;
+        }
+
         lastEnemySpawnTime = -1f;
-        bool enemyEventExists = false;
         if (spawnEventsList != null && spawnEventsList.spawnEvents != null)
         {
             foreach (EnemySpawnEvent spawnEvent in spawnEventsList.spawnEvents)
@@ -43,7 +52,6 @@ public class BossFight : MonoBehaviour
                 if (!spawnEvent.isTextEvent)
                 {
                     lastEnemySpawnTime = Mathf.Max(lastEnemySpawnTime, spawnEvent.time);
-                    enemyEventExists = true;
                 }
             }
         }
@@ -71,7 +79,7 @@ public class BossFight : MonoBehaviour
 
             if (lastEnemySpawnTime >= 0)
             {
-                if (elapsedTime >= lastEnemySpawnTime)
+                if (elapsedTime >= lastEnemySpawnTime && nextEventIndex >= spawnEventsList.spawnEvents.Count)
                 {
                     shouldStartEndSequence = true;
                 }
@@ -113,10 +121,38 @@ public class BossFight : MonoBehaviour
         }
     }
 
+    private IEnumerator ShakeBoss()
+    {
+        if (bossSpriteRenderer == null)
+        {
+            yield break;
+        }
+
+        originalBossPosition = bossSpriteRenderer.transform.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < shakeDuration)
+        {
+            float x = Random.Range(-1f, 1f) * shakeIntensity;
+            float y = Random.Range(-1f, 1f) * shakeIntensity;
+
+            bossSpriteRenderer.transform.localPosition = originalBossPosition + new Vector3(x, y, 0);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        bossSpriteRenderer.transform.localPosition = originalBossPosition;
+    }
+
     private IEnumerator InitiateEndFightDelay(float delay)
     {
-        
         yield return new WaitForSeconds(delay);
+
+        if (bossSpriteRenderer != null)
+        {
+            StartCoroutine(ShakeBoss());
+        }
 
         fightEnded = true;
         fightStarted = false;

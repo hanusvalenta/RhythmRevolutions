@@ -2821,6 +2821,9 @@ MonoBehaviour:
   spawnEventsList: {fileID: 11400000, guid: 2a6a57af9550e174ea17cf855fc0efff, type: 2}
   textBox: {fileID: 1429900791}
   fadeObject: {fileID: 1580833224}
+  bossSpriteRenderer: {fileID: 230839801}
+  shakeIntensity: 0.1
+  shakeDuration: 0.5
 --- !u!4 &1657523891
 Transform:
   m_ObjectHideFlags: 0
