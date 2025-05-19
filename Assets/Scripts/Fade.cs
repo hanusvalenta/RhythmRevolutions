@@ -7,7 +7,10 @@ public class AudioFader
 {
     public static IEnumerator FadeOut(AudioSource audioSource, float fadeTime)
     {
+        if (audioSource == null) yield break;
         float startVolume = audioSource.volume;
+        if (fadeTime <= 0) fadeTime = 0.001f;
+
         while (audioSource.volume > 0)
         {
             audioSource.volume -= startVolume * Time.deltaTime / fadeTime;
@@ -19,11 +22,15 @@ public class AudioFader
 
     public static IEnumerator FadeIn(AudioSource audioSource, float targetVolume, float fadeTime)
     {
+        if (audioSource == null) yield break;
         audioSource.volume = 0;
         if (!audioSource.isPlaying)
         {
             audioSource.Play();
         }
+        if (fadeTime <= 0) fadeTime = 0.001f;
+        targetVolume = Mathf.Clamp01(targetVolume);
+
         while (audioSource.volume < targetVolume)
         {
             audioSource.volume += targetVolume * Time.deltaTime / fadeTime;
@@ -54,6 +61,17 @@ public class Fade : MonoBehaviour
         {
             StartCoroutine(AudioFader.FadeOut(musicAudioSource, fadeTime));
         }
+        else
+        {
+            AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+            if (allAudioSources != null && allAudioSources.Length > 0)
+            {
+                foreach (AudioSource audioSrc in allAudioSources)
+                {
+                    StartCoroutine(AudioFader.FadeOut(audioSrc, fadeTime));
+                }
+            }
+        }
 
         if (fadeAnimator != null)
         {
@@ -70,13 +88,15 @@ public class Fade : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(fadeTime);
+        float actualFadeTime = fadeTime > 0 ? fadeTime : 0.001f;
+        yield return new WaitForSeconds(actualFadeTime);
 
         SceneManager.LoadScene(targetSceneName);
     }
 
     public void TriggerFadeOutAudio(AudioSource audioSourceToFade, float duration)
     {
+        if (duration <= 0) duration = 0.001f;
         if (audioSourceToFade != null)
         {
             StartCoroutine(AudioFader.FadeOut(audioSourceToFade, duration));
@@ -85,6 +105,7 @@ public class Fade : MonoBehaviour
 
     public void TriggerFadeInAudio(AudioSource audioSourceToFade, float targetVolume, float duration)
     {
+        if (duration <= 0) duration = 0.001f;
         if (audioSourceToFade != null)
         {
             StartCoroutine(AudioFader.FadeIn(audioSourceToFade, targetVolume, duration));
