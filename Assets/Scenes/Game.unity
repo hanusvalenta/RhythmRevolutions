@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7072597769402485513, guid: a439e1c43d078fe4da4681f1b09e61d4, type: 3}
+      propertyPath: musicAudioSource
+      value: 
+      objectReference: {fileID: 1586319281}
     - target: {fileID: 8899554515855555527, guid: a439e1c43d078fe4da4681f1b09e61d4, type: 3}
       propertyPath: m_Name
       value: FadeAndLoader
@@ -1866,6 +1870,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &1586319281 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3122767419680264753, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+  m_PrefabInstance: {fileID: 8565297294247823588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1606027933
 GameObject:
   m_ObjectHideFlags: 0
