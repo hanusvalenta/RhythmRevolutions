@@ -457,7 +457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game desighn: Hanus Valenta\nProgramming also me ;3\n\nSprites: ChatGPT
+  m_text: "Game design: Hanus Valenta\nProgramming also me ;3\n\nSprites: ChatGPT
     & Fandom\n\nSpecial thanks to:\nAdam Nemec \nViktor Vrablik\nJaromir Svejda\n\n&
     Karolina Holly for helping out witw sprites.\n"
   m_isRightToLeft: 0
