@@ -370,6 +370,23 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        if (collision.CompareTag("Ramona") && Input.GetKeyDown(KeyCode.E))
+        {
+            if (textBox != null )
+            {
+                textBox.ShowText("You did it Scott! You fought all of my exes! Now we can be together! Mwah!");
+            }
+
+            if (fadeObject != null)
+            {
+                Fade fade = fadeObject.GetComponent<Fade>();
+                if (fade != null)
+                {
+                    fade.FadeIn("Win");
+                }
+            }
+        }
         
         if (collision.CompareTag("Cat") && Input.GetKeyDown(KeyCode.E))
         {

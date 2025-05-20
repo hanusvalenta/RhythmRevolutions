@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gideon.unity
     guid: 8dc2e61f40a6fbf4899057766718e0bf
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 52610e26795988e48acd397b108f687c
   m_configObjects: {}
