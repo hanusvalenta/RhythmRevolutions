@@ -63,10 +63,10 @@ public class Player : MonoBehaviour
 
         if (GameManager.Instance != null && GameManager.lastPlayerPosition.HasValue)
         {
-            if (SceneManager.GetActiveScene().name == gameSceneName &&
-                GameManager.lastPlayerScene == gameSceneName)
+            if (SceneManager.GetActiveScene().name == gameSceneName && GameManager.lastPlayerScene == gameSceneName)
             {
                 transform.position = GameManager.lastPlayerPosition.Value;
+                transform.position = GameManager.spawnPlayerPosition.Value;
                 
                 GameManager.lastPlayerPosition = null;
                 GameManager.lastPlayerScene = null;
@@ -82,8 +82,7 @@ public class Player : MonoBehaviour
         {
             foreach (var bubble in interactionBubbles)
             {
-                if (bubble != null)
-                    bubble.SetActive(false);
+                if (bubble != null) bubble.SetActive(false);
             }
         }
     }

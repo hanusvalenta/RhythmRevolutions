@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public static Vector3? lastPlayerPosition;
     public static string lastPlayerScene;
 
+    public static Vector3? spawnPlayerPosition;
+
     private void Awake()
     {
         if (Instance == null)

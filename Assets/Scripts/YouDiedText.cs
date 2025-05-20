@@ -37,6 +37,8 @@ public class FadeInTMPText : MonoBehaviour
             audioSource.volume = volume;
             audioSource.Play();
         }
+
+        GameManager.lastPlayerPosition = GameManager.spawnPlayerPosition;
     }
 
     IEnumerator FadeInText()
