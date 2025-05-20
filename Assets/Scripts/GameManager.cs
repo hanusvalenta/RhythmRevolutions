@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public bool LucasSpared = false;
     public bool LucasFought = false;
 
+    public bool GideonSpared = false;
+    public bool GideonFought = false;
+
     public bool CatInteracted = false;
 
     public static Vector3? lastPlayerPosition;

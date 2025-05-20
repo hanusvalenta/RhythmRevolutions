@@ -342,6 +342,34 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        if (collision.CompareTag("Gideon") && Input.GetKeyDown(KeyCode.E))
+        {
+            if (GameManager.Instance.GideonSpared == true || GameManager.Instance.GideonFought == true)
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("I lost it all. Especially my money.");
+                }
+            }
+
+            else
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("Im the richest and most powerful of them all! You will never defeat me, Scott!");
+                }
+
+                if (fadeObject != null)
+                {
+                    Fade fade = fadeObject.GetComponent<Fade>();
+                    if (fade != null)
+                    {
+                        fade.FadeIn("Gideon");
+                    }
+                }
+            }
+        }
         
         if (collision.CompareTag("Cat") && Input.GetKeyDown(KeyCode.E))
         {

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lucas.unity
     guid: c746c04478487414885886e7426d964b
+  - enabled: 1
+    path: Assets/Scenes/Gideon.unity
+    guid: 8dc2e61f40a6fbf4899057766718e0bf
   m_configObjects: {}
