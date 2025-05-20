@@ -534,7 +534,7 @@ MonoBehaviour:
   - {fileID: 1737189569}
   - {fileID: 1407870199}
   - {fileID: 602765816}
-  spawnPattern: {fileID: 11400000, guid: 6cc580d0d76122a43b3908bc26cabdaa, type: 2}
+  spawnPattern: {fileID: 11400000, guid: c9aaea4206d016e4794285bec2e65358, type: 2}
   buttonsToUnhide:
   - {fileID: 755556440}
   - {fileID: 344995173}
@@ -2818,7 +2818,7 @@ MonoBehaviour:
   - {fileID: 404401899}
   - {fileID: 1525078607}
   - {fileID: 971611526}
-  spawnEventsList: {fileID: 11400000, guid: 2a6a57af9550e174ea17cf855fc0efff, type: 2}
+  spawnEventsList: {fileID: 11400000, guid: d6dc28963e65d204d9065ea7975a6c4b, type: 2}
   textBox: {fileID: 1429900791}
   fadeObject: {fileID: 1580833224}
   bossSpriteRenderer: {fileID: 230839801}

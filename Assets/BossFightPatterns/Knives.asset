@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a814a31b5ffbe2c449bc953157284fcf, type: 3}
+  m_Name: Knives
+  m_EditorClassIdentifier: 
+  spawnEvents:
+  - time: 0
+    isTextEvent: 1
+    textToShow: Knives is here. Stay sharp!
+    spawnerIndex: 0
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 1
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 0
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 2
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 1
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 3
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 2
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 4
+    isTextEvent: 1
+    textToShow: Watch those daggers—they’re fast.
+    spawnerIndex: 0
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 5
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 3
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 6
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 4
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 7
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 5
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 8
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 6
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 9
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 7
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 10
+    isTextEvent: 1
+    textToShow: Keep moving. Don’t get cornered.
+    spawnerIndex: 0
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 11
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 8
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 12
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 9
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 13
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 10
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 14
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 11
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 15
+    isTextEvent: 1
+    textToShow: You’re halfway through. Stay sharp!
+    spawnerIndex: 0
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 16
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 1
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 17
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 2
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 18
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 3
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 19
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 4
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 20
+    isTextEvent: 1
+    textToShow: They're not letting up!
+    spawnerIndex: 5
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 21
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 6
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 22
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 7
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 23
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 8
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 24
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 9
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 25
+    isTextEvent: 1
+    textToShow: Final push. You’ve got this!
+    spawnerIndex: 0
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 26
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 10
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 27
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 11
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 28
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 1
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 29
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 2
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 30
+    isTextEvent: 1
+    textToShow: Well done! You handled Knives perfectly.
+    spawnerIndex: 0
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}

@@ -1,0 +1,219 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a814a31b5ffbe2c449bc953157284fcf, type: 3}
+  m_Name: Gideon
+  m_EditorClassIdentifier: 
+  spawnEvents:
+  - time: 0
+    isTextEvent: 1
+    textToShow: Gideon doesn’t fight fair. Stay alert!
+    spawnerIndex: 0
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 1
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 1
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 3
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 2
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 5
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 3
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 7
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 4
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 9
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 5
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 11
+    isTextEvent: 1
+    textToShow: He’s calling backup. Hold your ground!
+    spawnerIndex: 6
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 13
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 7
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 15
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 8
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 17
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 9
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 19
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 10
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 21
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 11
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 24
+    isTextEvent: 1
+    textToShow: Gideon’s ramping up. Stay mobile!
+    spawnerIndex: 0
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 27
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 1
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 30
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 2
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 33
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 3
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 36
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 4
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 39
+    isTextEvent: 1
+    textToShow: Don’t let him flank you!
+    spawnerIndex: 5
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 42
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 6
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 45
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 7
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 48
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 8
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 51
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 9
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 54
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 10
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 57
+    isTextEvent: 1
+    textToShow: Keep your eyes on Gideon—he’s tricky!
+    spawnerIndex: 8 # EDITED (was 11)
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 60
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 0
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 63
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 1
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 66
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 2
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 69
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 3
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 72
+    isTextEvent: 1
+    textToShow: You’ve almost got him!
+    spawnerIndex: 4
+    enemyPrefabIndex: 4
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 75
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 3
+    enemyPrefabIndex: 3
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 78
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 6
+    enemyPrefabIndex: 2
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 81
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 7
+    enemyPrefabIndex: 1
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 84
+    isTextEvent: 0
+    textToShow:
+    spawnerIndex: 8
+    enemyPrefabIndex: 0
+    rotation: {x: 0, y: 0, z: 0}
+  - time: 87
+    isTextEvent: 1
+    textToShow: Gideon’s out! Nice work!
+    spawnerIndex: 9
+    enemyPrefabIndex: 5
+    rotation: {x: 0, y: 0, z: 0}

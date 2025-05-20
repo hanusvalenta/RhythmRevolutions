@@ -2818,7 +2818,7 @@ MonoBehaviour:
   - {fileID: 404401899}
   - {fileID: 1525078607}
   - {fileID: 971611526}
-  spawnEventsList: {fileID: 11400000, guid: 2a6a57af9550e174ea17cf855fc0efff, type: 2}
+  spawnEventsList: {fileID: 11400000, guid: b061739069274ef4ba3027a3b0051d07, type: 2}
   textBox: {fileID: 1429900791}
   fadeObject: {fileID: 1580833224}
   bossSpriteRenderer: {fileID: 230839801}
