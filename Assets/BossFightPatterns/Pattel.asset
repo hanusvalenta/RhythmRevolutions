@@ -12,76 +12,166 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a814a31b5ffbe2c449bc953157284fcf, type: 3}
   m_Name: Pattel
   m_EditorClassIdentifier:
-  spawnEvents:
+  spawnData:
+  - time: 0
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Get ready for the combat rhythm section!
+  - time: 0.5
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
   - time: 1
-    spawnerIndex: 0
-    enemyPrefabIndex: 0
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 1.2
-    spawnerIndex: 1
-    enemyPrefabIndex: 1
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 1.4
     spawnerIndex: 2
-    enemyPrefabIndex: 2
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 1.6
-    spawnerIndex: 3
-    enemyPrefabIndex: 0
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 1.8
-    spawnerIndex: 4
-    enemyPrefabIndex: 1
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 2.0
-    spawnerIndex: 5
-    enemyPrefabIndex: 2
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 3
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 1.5
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 1.2
+    isTextEvent: 0
+    textToShow: 
+  - time: 2.8
     spawnerIndex: 0
-    enemyPrefabIndex: 2
-    rotation: {x: 0, y: 0, z: 0}
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
   - time: 3.2
-    spawnerIndex: 1
-    enemyPrefabIndex: 0
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 3.4
     spawnerIndex: 2
-    enemyPrefabIndex: 1
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 3.6
-    spawnerIndex: 3
-    enemyPrefabIndex: 2
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 3.8
-    spawnerIndex: 4
-    enemyPrefabIndex: 0
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 4.0
-    spawnerIndex: 5
-    enemyPrefabIndex: 1
-    rotation: {x: 0, y: 0, z: 0}
+    holdNote: 1
+    holdDuration: 0.8
+    isTextEvent: 0
+    textToShow: 
+  - time: 4.3
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
   - time: 5
     spawnerIndex: 0
-    enemyPrefabIndex: 1
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 5
+    holdNote: 1
+    holdDuration: 1.5
+    isTextEvent: 0
+    textToShow: 
+  - time: 7
     spawnerIndex: 2
-    enemyPrefabIndex: 0
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 5
-    spawnerIndex: 4
-    enemyPrefabIndex: 2
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 6
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Keep going! Hit every note or suffer the consequences!
+  - time: 7.5
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 8
     spawnerIndex: 1
-    enemyPrefabIndex: 2
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 6
-    spawnerIndex: 3
-    enemyPrefabIndex: 1
-    rotation: {x: 0, y: 0, z: 0}
-  - time: 6
-    spawnerIndex: 5
-    enemyPrefabIndex: 0
-    rotation: {x: 0, y: 0, z: 0}
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 10
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 11.2
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 12
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 1.3
+    isTextEvent: 0
+    textToShow: 
+  - time: 14
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 15.5
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: You're halfway through. Stay focused!
+  - time: 16
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 17
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 1.2
+    isTextEvent: 0
+    textToShow: 
+  - time: 19
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 19.5
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 0.7
+    isTextEvent: 0
+    textToShow: 
+  - time: 20.8
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Almost there! Last stretch!
+  - time: 21.2
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 22
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 24
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 24.5
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 25
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 27
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Great job! You've completed the training!

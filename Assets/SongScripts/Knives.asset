@@ -1,0 +1,297 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17f0d54c8953e9459324174c4623c8b, type: 3}
+  m_Name: Knives
+  m_EditorClassIdentifier: 
+  spawnData:
+  - time: 0
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Knife fight incoming. Dodge or strike—your choice.
+  - time: 0.5
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 1
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 1.3
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 1.2
+    isTextEvent: 0
+    textToShow: 
+  - time: 2.7
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 3
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 0.8
+    isTextEvent: 0
+    textToShow: 
+  - time: 4.2
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Quick attacks. React fast or bleed.
+  - time: 4.6
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 5.2
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 5.7
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 1.1
+    isTextEvent: 0
+    textToShow: 
+  - time: 7.3
+    spawnerIndex: 0
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 9
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: He’s speeding up. Stay sharp.
+  - time: 9.4
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 9.8
+    spawnerIndex: 0
+    holdNote: 1
+    holdDuration: 1.3
+    isTextEvent: 0
+    textToShow: 
+  - time: 11.5
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 12
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 12.4
+    spawnerIndex: 0
+    holdNote: 1
+    holdDuration: 0.7
+    isTextEvent: 0
+    textToShow: 
+  - time: 13.5
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: You’re holding your own. Push harder!
+  - time: 14
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 14.4
+    spawnerIndex: 0
+    holdNote: 1
+    holdDuration: 1.1
+    isTextEvent: 0
+    textToShow: 
+  - time: 16
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 16.5
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 0.8
+    isTextEvent: 0
+    textToShow: 
+  - time: 18
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: He’s cornering you. Don't stop.
+  - time: 18.5
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 19
+    spawnerIndex: 0
+    holdNote: 1
+    holdDuration: 1.5
+    isTextEvent: 0
+    textToShow: 
+  - time: 21
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 21.4
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 23
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Last 20 seconds. No mercy.
+  - time: 23.4
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 24
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 0.9
+    isTextEvent: 0
+    textToShow: 
+  - time: 25.5
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 26
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 28
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 28.5
+    spawnerIndex: 0
+    holdNote: 1
+    holdDuration: 1.1
+    isTextEvent: 0
+    textToShow: 
+  - time: 30
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: You’re wounded. This is your last chance!
+  - time: 30.5
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 31
+    spawnerIndex: 0
+    holdNote: 1
+    holdDuration: 1.5
+    isTextEvent: 0
+    textToShow: 
+  - time: 33
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 33.5
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 1.2
+    isTextEvent: 0
+    textToShow: 
+  - time: 35.2
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: Final blows incoming. Strike hard.
+  - time: 35.8
+    spawnerIndex: 1
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 36.2
+    spawnerIndex: 2
+    holdNote: 1
+    holdDuration: 1.3
+    isTextEvent: 0
+    textToShow: 
+  - time: 38
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 38.5
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 1
+    isTextEvent: 0
+    textToShow: 
+  - time: 40
+    spawnerIndex: 2
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 1
+    textToShow: You did it. He's down.
+  - time: 40.8
+    spawnerIndex: 0
+    holdNote: 0
+    holdDuration: 0
+    isTextEvent: 0
+    textToShow: 
+  - time: 41.5
+    spawnerIndex: 1
+    holdNote: 1
+    holdDuration: 2.5
+    isTextEvent: 0
+    textToShow: 

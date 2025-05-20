@@ -534,7 +534,7 @@ MonoBehaviour:
   - {fileID: 1737189569}
   - {fileID: 1407870199}
   - {fileID: 602765816}
-  spawnPattern: {fileID: 11400000, guid: 6cc580d0d76122a43b3908bc26cabdaa, type: 2}
+  spawnPattern: {fileID: 11400000, guid: 229f1e3cf171db2429f3bf7bdb31b8e3, type: 2}
   buttonsToUnhide:
   - {fileID: 755556440}
   - {fileID: 344995173}
