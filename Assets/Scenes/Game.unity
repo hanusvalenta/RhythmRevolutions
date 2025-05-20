@@ -2387,6 +2387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe27ebdb7be8fd48a27707bb84e798c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &750173517666306271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656474281518611070, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+  m_PrefabInstance: {fileID: 2808341185796499188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979093538435800431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2477,6 +2482,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1309700313264576348, guid: 5a0dcfaa0b4bf6440990df1227703d8f, type: 3}
   m_PrefabInstance: {fileID: 1979093538435800431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2808341185796499188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -974.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -569.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375666083008300499, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937702138103609270, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
+      propertyPath: m_Name
+      value: Lucas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d9e2cdbd0b69aa48a57cdc55576f6a2, type: 3}
 --- !u!1001 &3980092801960491215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2800,11 +2862,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: interactionBubbles.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: allowedMovementTags.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: interactionBubbles.Array.data[0]
@@ -2823,12 +2885,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4827620604310523795}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: interactionBubbles.Array.data[4]
+      value: 
+      objectReference: {fileID: 750173517666306271}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: allowedMovementTags.Array.data[3]
       value: Cat
       objectReference: {fileID: 0}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: allowedMovementTags.Array.data[4]
       value: Knives
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: allowedMovementTags.Array.data[5]
+      value: Lucas
       objectReference: {fileID: 0}
     - target: {fileID: 8142442895164001741, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: m_Name
@@ -2853,4 +2923,5 @@ SceneRoots:
   - {fileID: 3980092801960491215}
   - {fileID: 6073981604065312654}
   - {fileID: 875026934}
+  - {fileID: 2808341185796499188}
   - {fileID: 148996209}

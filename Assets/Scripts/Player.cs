@@ -314,6 +314,34 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        if (collision.CompareTag("Lucas") && Input.GetKeyDown(KeyCode.E))
+        {
+            if (GameManager.Instance.LucasSpared == true || GameManager.Instance.LucasFought == true)
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("I admit youre cooler than me, Scott. But I won't fight you again.");
+                }
+            }
+
+            else
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("Ready to fight, Scott? I am the coolest of them all!");
+                }
+
+                if (fadeObject != null)
+                {
+                    Fade fade = fadeObject.GetComponent<Fade>();
+                    if (fade != null)
+                    {
+                        fade.FadeIn("Lucas");
+                    }
+                }
+            }
+        }
         
         if (collision.CompareTag("Cat") && Input.GetKeyDown(KeyCode.E))
         {
