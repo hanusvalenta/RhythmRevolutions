@@ -286,6 +286,34 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        if (collision.CompareTag("Knives") && Input.GetKeyDown(KeyCode.E))
+        {
+            if (GameManager.Instance.KnivesSpared == true || GameManager.Instance.KnivesFought == true)
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("You defeated me, Scott. I won't fight you again.");
+                }
+            }
+
+            else
+            {
+                if (textBox != null)
+                {
+                    textBox.ShowText("You wont get past me this time, Scott! Ramona is mine!");
+                }
+
+                if (fadeObject != null)
+                {
+                    Fade fade = fadeObject.GetComponent<Fade>();
+                    if (fade != null)
+                    {
+                        fade.FadeIn("Knives");
+                    }
+                }
+            }
+        }
         
         if (collision.CompareTag("Cat") && Input.GetKeyDown(KeyCode.E))
         {

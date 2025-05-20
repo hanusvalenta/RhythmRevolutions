@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public bool WallaceSpared = false;
     public bool WallaceFought = false;
 
+    public bool KnivesSpared = false;
+    public bool KnivesFought = false;
+
     public bool CatInteracted = false;
 
     public static Vector3? lastPlayerPosition;

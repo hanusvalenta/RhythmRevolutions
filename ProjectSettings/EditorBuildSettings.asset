@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wallace.unity
     guid: f91a112ebb28628438d22be6b80276f5
+  - enabled: 1
+    path: Assets/Scenes/Knives.unity
+    guid: c79b5347c6672334c8959a3f266628f2
   m_configObjects: {}

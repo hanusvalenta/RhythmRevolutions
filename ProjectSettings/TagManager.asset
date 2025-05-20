@@ -12,6 +12,7 @@ TagManager:
   - TextBox
   - Wallace
   - Cat
+  - Knives
   layers:
   - Default
   - TransparentFX
