@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
         if (closestPoint != null)
         {
             Vector3 newPosition = closestPoint.transform.position;
-            newPosition.z = -1f; // Ensure Z position is -1
+            newPosition.z = -1f;
             transform.position = newPosition;
             rb.velocity = Vector2.zero;
         }
