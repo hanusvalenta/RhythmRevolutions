@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 
         if (GameManager.intoPlayed == false)
         {
-            textBox.ShowText("XIn the mysterious world of Torronto Canada... Scott Pilgrim was dating a highschooler...");
+            textBox.ShowText("XNot so long ago...in the mysterious land...of Toronto, Canada...Scott Pilgrim was dating a highschooler.");
             GameManager.intoPlayed = true;
         }
     }
@@ -278,7 +278,7 @@ public class Player : MonoBehaviour
             {
                 if (textBox != null)
                 {
-                    textBox.ShowText("Hey, Scott! Im here to help you out. Lets learn some moves to find Ramona.");
+                    textBox.ShowText("Hey, Scott! Im here to help you out. Youre late to meet Ramona in the park. Lets learn some moves before you go tho You might need em.");
                 }
 
                 if (fadeObject != null)
