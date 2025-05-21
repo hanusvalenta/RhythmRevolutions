@@ -24,8 +24,8 @@ public class BossFight : MonoBehaviour
     private bool endingSequenceHasBegun = false;
 
     public AudioClip bossMusic;
-    [Range(0f, 1f)] // This will make it a slider in the Inspector
-    public float musicVolume = 0.75f; // Default volume
+    [Range(0f, 1f)]
+    public float musicVolume = 0.75f;
     private AudioSource audioSource;
 
     void Start()
@@ -45,7 +45,7 @@ public class BossFight : MonoBehaviour
         {
             audioSource.clip = bossMusic;
             audioSource.loop = true;
-            audioSource.volume = musicVolume; // Set the volume from the editor variable
+            audioSource.volume = musicVolume;
             if (!audioSource.isPlaying)
             {
                 audioSource.Play();
@@ -114,7 +114,7 @@ public class BossFight : MonoBehaviour
                 }
             }
 
-            if (shouldStartEndSequence)
+            if (shouldStartEndSequence || GameManager.Instance.skipFight)
             {
                 endingSequenceHasBegun = true;
                 StartCoroutine(InitiateEndFightDelay(3.0f));

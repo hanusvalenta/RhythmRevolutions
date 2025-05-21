@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     public static Vector3? spawnPlayerPosition;
 
     public static bool intoPlayed = false;
+
+    public bool skipNotes = false;
+    public bool skipFight = false;
+
     private void Awake()
     {
         if (Instance == null)

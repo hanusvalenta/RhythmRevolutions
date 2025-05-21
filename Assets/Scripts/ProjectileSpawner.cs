@@ -54,7 +54,7 @@ public class SpawnerController : MonoBehaviour
                             timeSinceLastSpawn = 0f;
                      }
 
-                     if (nextSpawnIndex >= spawnPattern.spawnData.Length)
+                     if (nextSpawnIndex >= spawnPattern.spawnData.Length || GameManager.Instance.skipNotes)
                      {
                             hasSpawnedAll = true;
                      }
