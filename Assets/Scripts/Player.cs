@@ -278,7 +278,7 @@ public class Player : MonoBehaviour
             {
                 if (textBox != null)
                 {
-                    textBox.ShowText("Hey, Scott! Im here to help you out. Youre late to meet Ramona in the park. Lets learn some moves before you go tho You might need em.");
+                    textBox.ShowText("Hey, Scott! Im here to help you out.        Youre late to meet Ramona in the park.         Lets learn some moves before you go tho You might need em.");
                 }
 
                 if (fadeObject != null)

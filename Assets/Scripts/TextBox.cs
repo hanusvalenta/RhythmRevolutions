@@ -9,7 +9,7 @@ public class TextBox : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public float typingSpeed = 0.05f;
     public int maxCharactersPerPage = 200;
-    public float speakingVolume = 0.05f;
+    public float speakingVolume = 0.01f;
 
     private List<string> pages = new List<string>();
     private int currentPageIndex = 0;
