@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
-        
+
         if (playerSpriteRenderer == null)
         {
             playerSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
             {
                 transform.position = GameManager.lastPlayerPosition.Value;
                 transform.position = GameManager.spawnPlayerPosition.Value;
-                
+
                 GameManager.lastPlayerPosition = null;
                 GameManager.lastPlayerScene = null;
             }
@@ -84,6 +84,12 @@ public class Player : MonoBehaviour
             {
                 if (bubble != null) bubble.SetActive(false);
             }
+        }
+
+        if (GameManager.intoPlayed == false)
+        {
+            textBox.ShowText("XIn the mysterious world of Torronto Canada... Scott Pilgrim was dating a highschooler...");
+            GameManager.intoPlayed = true;
         }
     }
 

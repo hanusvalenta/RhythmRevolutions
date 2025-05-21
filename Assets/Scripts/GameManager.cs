@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public static Vector3? spawnPlayerPosition;
 
+    public static bool intoPlayed = false;
     private void Awake()
     {
         if (Instance == null)
