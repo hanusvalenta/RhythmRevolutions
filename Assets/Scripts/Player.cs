@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Linq;
 
 [RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
 
     public float loopVolume = 0.01f;
 
+    public List<GameObject> barrierRespawnPoints = new List<GameObject>();
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,7 +69,10 @@ public class Player : MonoBehaviour
             if (SceneManager.GetActiveScene().name == gameSceneName && GameManager.lastPlayerScene == gameSceneName)
             {
                 transform.position = GameManager.lastPlayerPosition.Value;
-                transform.position = GameManager.spawnPlayerPosition.Value;
+                if (GameManager.spawnPlayerPosition.HasValue)
+                {
+                    transform.position = GameManager.spawnPlayerPosition.Value;
+                }
 
                 GameManager.lastPlayerPosition = null;
                 GameManager.lastPlayerScene = null;
@@ -88,7 +94,10 @@ public class Player : MonoBehaviour
 
         if (GameManager.intoPlayed == false)
         {
-            textBox.ShowText("XNot so long ago...in the mysterious land...of Toronto, Canada...Scott Pilgrim was dating a highschooler.");
+            if (textBox != null)
+            {
+                textBox.ShowText("XNot so long ago...in the mysterious land...of Toronto, Canada...Scott Pilgrim was dating a highschooler.");
+            }
             GameManager.intoPlayed = true;
         }
     }
@@ -132,32 +141,32 @@ public class Player : MonoBehaviour
                 if (animationTimer >= animationSpeed)
                 {
                     animationTimer = 0f;
-                    currentFrame = (currentFrame + 1) % 3; 
+                    currentFrame = (currentFrame + 1) % 3;
 
-                    if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y)) 
+                    if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
                     {
-                        if (movement.x < 0) 
+                        if (movement.x < 0)
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveLeftSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveLeftSprite2;
                             else playerSpriteRenderer.sprite = moveLeftSprite3;
                         }
-                        else 
+                        else
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveRightSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveRightSprite2;
                             else playerSpriteRenderer.sprite = moveRightSprite3;
                         }
                     }
-                    else 
+                    else
                     {
-                        if (movement.y > 0) 
+                        if (movement.y > 0)
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveUpSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveUpSprite2;
                             else playerSpriteRenderer.sprite = moveUpSprite3;
                         }
-                        else 
+                        else
                         {
                             if (currentFrame == 0) playerSpriteRenderer.sprite = moveDownSprite1;
                             else if (currentFrame == 1) playerSpriteRenderer.sprite = moveDownSprite2;
@@ -168,7 +177,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                playerSpriteRenderer.sprite = idleSprite; 
+                playerSpriteRenderer.sprite = idleSprite;
                 currentFrame = 0;
                 animationTimer = 0f;
                 lastMovement = Vector2.zero;
@@ -178,16 +187,21 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = Vector2.SmoothDamp(rb.velocity, movement * moveSpeed, ref currentVelocity, 0.05f); 
+        rb.velocity = Vector2.SmoothDamp(rb.velocity, movement * moveSpeed, ref currentVelocity, 0.05f);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!allowedMovementTags.Contains(collision.tag))
+        if (collision.CompareTag("Barrier"))
         {
-            canMove = false; 
-            ResolveCollision(collision); 
+            MoveToNearestRespawnPoint();
         }
+        else if (!allowedMovementTags.Contains(collision.tag))
+        {
+            canMove = false;
+            ResolveCollision(collision);
+        }
+
 
         if (allowedMovementTags.Contains(collision.tag) && interactionBubbles != null)
         {
@@ -199,9 +213,36 @@ public class Player : MonoBehaviour
         }
     }
 
+    void MoveToNearestRespawnPoint()
+    {
+        if (barrierRespawnPoints == null || barrierRespawnPoints.Count == 0)
+        {
+            Debug.LogWarning("BarrierRespawnPoints list is empty or not assigned.");
+            return;
+        }
+
+        GameObject closestPoint = barrierRespawnPoints
+            .Where(point => point != null)
+            .OrderBy(point => Vector2.Distance(transform.position, point.transform.position))
+            .FirstOrDefault();
+
+        if (closestPoint != null)
+        {
+            Vector3 newPosition = closestPoint.transform.position;
+            newPosition.z = -1f; // Ensure Z position is -1
+            transform.position = newPosition;
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            Debug.LogWarning("No valid respawn points found in the barrierRespawnPoints list.");
+        }
+    }
+
+
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (!allowedMovementTags.Contains(collision.tag))
+        if (!allowedMovementTags.Contains(collision.tag) && !collision.CompareTag("Barrier"))
         {
             canMove = true;
         }
@@ -215,7 +256,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-    
+
     void ResolveCollision(Collider2D collision)
     {
         if (playerCollider == null || collision == null) return;
@@ -224,28 +265,27 @@ public class Player : MonoBehaviour
 
         if (colliderDistance.isOverlapped)
         {
-            Vector2 directionToPush = (Vector2)transform.position - colliderDistance.pointB; 
-            if (directionToPush == Vector2.zero) 
+            Vector2 directionToPush = (Vector2)transform.position - colliderDistance.pointB;
+            if (directionToPush == Vector2.zero)
             {
-                directionToPush = Vector2.up; 
+                directionToPush = Vector2.up;
             }
-            transform.Translate(directionToPush.normalized * 0.01f); 
+            transform.Translate(directionToPush.normalized * 0.05f);
         }
-        rb.velocity = Vector2.zero; 
+        rb.velocity = Vector2.zero;
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("MatthewPatel") && Input.GetKeyDown(KeyCode.E))
         {
-            if (GameManager.Instance.PatelFought == true || GameManager.Instance.PatelSpared == true)
+            if (GameManager.Instance != null && (GameManager.Instance.PatelFought == true || GameManager.Instance.PatelSpared == true))
             {
                 if (textBox != null)
                 {
                     textBox.ShowText("What do you want, Scott? I already fought you.");
                 }
             }
-
             else
             {
                 if (textBox != null)
@@ -266,14 +306,13 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Wallace") && Input.GetKeyDown(KeyCode.E))
         {
-            if (GameManager.Instance.WallaceSpared == true || GameManager.Instance.WallaceFought == true)
+            if (GameManager.Instance != null && (GameManager.Instance.WallaceSpared == true || GameManager.Instance.WallaceFought == true))
             {
                 if (textBox != null)
                 {
                     textBox.ShowText("Were done here, Scott. Now go find Ramona.");
                 }
             }
-
             else
             {
                 if (textBox != null)
@@ -294,14 +333,13 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Knives") && Input.GetKeyDown(KeyCode.E))
         {
-            if (GameManager.Instance.KnivesSpared == true || GameManager.Instance.KnivesFought == true)
+            if (GameManager.Instance != null && (GameManager.Instance.KnivesSpared == true || GameManager.Instance.KnivesFought == true))
             {
                 if (textBox != null)
                 {
                     textBox.ShowText("You defeated me, Scott. I won't fight you again.");
                 }
             }
-
             else
             {
                 if (textBox != null)
@@ -322,14 +360,13 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Lucas") && Input.GetKeyDown(KeyCode.E))
         {
-            if (GameManager.Instance.LucasSpared == true || GameManager.Instance.LucasFought == true)
+            if (GameManager.Instance != null && (GameManager.Instance.LucasSpared == true || GameManager.Instance.LucasFought == true))
             {
                 if (textBox != null)
                 {
                     textBox.ShowText("I admit youre cooler than me, Scott. But I won't fight you again.");
                 }
             }
-
             else
             {
                 if (textBox != null)
@@ -350,14 +387,13 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Gideon") && Input.GetKeyDown(KeyCode.E))
         {
-            if (GameManager.Instance.GideonSpared == true || GameManager.Instance.GideonFought == true)
+            if (GameManager.Instance != null && (GameManager.Instance.GideonSpared == true || GameManager.Instance.GideonFought == true))
             {
                 if (textBox != null)
                 {
                     textBox.ShowText("I lost it all. Especially my money.");
                 }
             }
-
             else
             {
                 if (textBox != null)
@@ -378,7 +414,7 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Ramona") && Input.GetKeyDown(KeyCode.E))
         {
-            if (textBox != null )
+            if (textBox != null)
             {
                 textBox.ShowText("You did it Scott! You fought all of my exes! Now we can be together! Mwah!");
             }
@@ -392,25 +428,26 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        
+
         if (collision.CompareTag("Cat") && Input.GetKeyDown(KeyCode.E))
         {
-            if (GameManager.Instance.CatInteracted == true)
+            if (GameManager.Instance != null && GameManager.Instance.CatInteracted == true)
             {
                 if (textBox != null)
                 {
                     textBox.ShowText("Meaow. Again...");
                 }
             }
-
             else
             {
                 if (textBox != null)
                 {
                     textBox.ShowText("Meaow.");
                 }
-
-                GameManager.Instance.CatInteracted = true;
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.CatInteracted = true;
+                }
             }
         }
     }
