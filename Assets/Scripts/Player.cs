@@ -116,6 +116,18 @@ public class Player : MonoBehaviour
 
         movement = movement.normalized;
 
+        if (SceneManager.GetActiveScene().name == gameSceneName && Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (fadeObject != null)
+            {
+                Fade fade = fadeObject.GetComponent<Fade>();
+                if (fade != null)
+                {
+                    fade.FadeIn("MainMenu");
+                }
+            }
+        }
+
         if (Camera.main != null)
         {
             Camera.main.transform.position = Vector3.Lerp(

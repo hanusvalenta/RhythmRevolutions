@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject fightButton;
     public GameObject spareButton;
+    public GameObject startButton;
 
     public GameObject fightSquare;
     public float fightSquareFadeDuration = 3f;
@@ -28,6 +29,24 @@ public class MenuManager : MonoBehaviour
         if (textBox == null)
         {
             textBox = FindObjectOfType<TextBox>();
+        }
+
+        if (GameManager.intoPlayed == true)
+        {
+            setContinueButton();
+        }
+    }
+
+    public void setContinueButton()
+    {
+        if (startButton != null)
+        {
+            TextMeshProUGUI buttonText = startButton.GetComponentInChildren<TextMeshProUGUI>();
+            if (buttonText != null)
+            {
+                buttonText.text = "Continue";
+                buttonText.fontSize -= 2;
+            }
         }
     }
 
