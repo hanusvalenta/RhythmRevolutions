@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FadeRight
+  m_Name: FadeRightBlack
   m_Shader: {fileID: 4800000, guid: 789c178233bc0a046803f496ee76e147, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -29,8 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 2.69, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 2.35, y: -0.86}
+        m_Offset: {x: -0.05, y: -3.82}
     - _MaskTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
