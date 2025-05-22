@@ -18432,11 +18432,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1619026196626874224, guid: 75e95f2c608b7c2468daeed3117a7f69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -940.13
+      value: -934.54
       objectReference: {fileID: 0}
     - target: {fileID: 1619026196626874224, guid: 75e95f2c608b7c2468daeed3117a7f69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -543.19
+      value: -549.1
       objectReference: {fileID: 0}
     - target: {fileID: 1619026196626874224, guid: 75e95f2c608b7c2468daeed3117a7f69, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18618,9 +18618,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 43353287}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: idleSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bf1a08cb0dd5a2458f544b212860d2e, type: 3}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: loopVolume
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: moveUpSprite2
+      value: 
+      objectReference: {fileID: 21300000, guid: d595434558bda3749907329e0cbc85ad, type: 3}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: moveUpSprite3
+      value: 
+      objectReference: {fileID: 21300000, guid: 8355f42efce56264dbfa607fd07da453, type: 3}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: interactionBubble
       value: 
