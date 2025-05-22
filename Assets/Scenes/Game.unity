@@ -2373,6 +2373,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &238955789 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+  m_PrefabInstance: {fileID: 4701078323765096692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &249448166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2508,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &249755886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249755887}
+  m_Layer: 0
+  m_Name: BossBarriers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &249755887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249755886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -944.3374, y: -539.6682, z: 0.66502875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 238955789}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &267924003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21965,6 +22002,71 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7451998525841607429, guid: e9b5ebd318d220d429023ab2e6daa0ac, type: 3}
   m_PrefabInstance: {fileID: 4905673425743921039}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4701078323765096692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 249755887}
+    m_Modifications:
+    - target: {fileID: 4278802189180541299, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_Name
+      value: BossBarrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: barrierText
+      value: You can't pass here yet! Defeat or spare Wallace first.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: bossNameToCheck
+      value: Wallace
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -42.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.503052
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.66502875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
 --- !u!1 &4827620604310523795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4210245887141931969, guid: 99833b7cc36452e4db6f1b73f495b3c5, type: 3}
@@ -22488,3 +22590,4 @@ SceneRoots:
   - {fileID: 148996209}
   - {fileID: 5362733616662427814}
   - {fileID: 491863272}
+  - {fileID: 249755887}
