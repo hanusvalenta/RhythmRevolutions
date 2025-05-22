@@ -6,6 +6,19 @@ public class Box : MonoBehaviour
     private Player player;
     private Transform playerTransform;
     public float interactionDistance = 2f;
+    public AudioClip pickUpSound;
+    [Range(0f, 1f)]
+    public float pickUpVolume = 1f;
+    private AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     void Update()
     {
@@ -48,6 +61,11 @@ public class Box : MonoBehaviour
                     {
                         rb.isKinematic = true;
                     }
+
+                    if (pickUpSound != null && audioSource != null)
+                    {
+                        audioSource.PlayOneShot(pickUpSound, pickUpVolume);
+                    }
                 }
             }
         }
@@ -70,6 +88,11 @@ public class Box : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.gravityScale = 0f;
+        }
+
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 

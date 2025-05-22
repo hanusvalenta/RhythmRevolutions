@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     public List<GameObject> interactionBubbles = new List<GameObject>();
     public List<string> allowedMovementTags = new List<string>() { "Ground" };
-    private bool canMove = true;
+    public bool canMove = true;
     public GameObject fadeObject;
     private Vector2 currentVelocity;
     public TextBox textBox;
@@ -239,7 +239,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void MoveToNearestRespawnPoint()
+    public void MoveToNearestRespawnPoint()
     {
         if (barrierRespawnPoints == null || barrierRespawnPoints.Count == 0)
         {
