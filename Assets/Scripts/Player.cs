@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (GameManager.intoPlayed == false && GameManager.skipIntro == false)
+        if (GameManager.intoPlayed == false && GameManager.Instance.skipIntro == false)
         {
             if (textBox != null)
             {
