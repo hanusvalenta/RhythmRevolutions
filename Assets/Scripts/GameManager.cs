@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public bool skipNotes = false;
     public bool skipFight = false;
+    public bool skipIntro = false;
 
     private void Awake()
     {
