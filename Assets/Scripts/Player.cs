@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     public float loopVolume = 0.01f;
     public List<GameObject> barrierRespawnPoints = new List<GameObject>();
 
+    public bool hasBox = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
