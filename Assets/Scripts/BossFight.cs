@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class BossFight : MonoBehaviour
 {
@@ -9,20 +10,16 @@ public class BossFight : MonoBehaviour
     public EnemySpawnEventList spawnEventsList;
     public TextBox textBox;
     public GameObject fadeObject;
-
     public SpriteRenderer bossSpriteRenderer;
     public float shakeIntensity = 0.1f;
     public float shakeDuration = 0.5f;
     private Vector3 originalBossPosition;
-
     private float elapsedTime = 0f;
     private int nextEventIndex = 0;
     private bool fightStarted = false;
     private bool fightEnded = false;
-
     private float lastEnemySpawnTime = -1f;
     private bool endingSequenceHasBegun = false;
-
     public AudioClip bossMusic;
     [Range(0f, 1f)]
     public float musicVolume = 0.75f;
@@ -34,21 +31,18 @@ public class BossFight : MonoBehaviour
         {
             textBox = FindObjectOfType<TextBox>();
         }
-
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
-
         if (bossMusic != null && audioSource != null)
         {
             audioSource.clip = bossMusic;
             audioSource.loop = true;
             audioSource.volume = musicVolume;
-            if (!audioSource.isPlaying)
+            if (!audioSource.isPlaying && fightStarted)
             {
-                audioSource.Play();
             }
         }
     }
@@ -60,12 +54,17 @@ public class BossFight : MonoBehaviour
         elapsedTime = 0f;
         nextEventIndex = 0;
         endingSequenceHasBegun = false;
-
         if (bossSpriteRenderer != null)
         {
             originalBossPosition = bossSpriteRenderer.transform.localPosition;
         }
-
+        if (audioSource != null && bossMusic != null && !audioSource.isPlaying)
+        {
+            audioSource.clip = bossMusic;
+            audioSource.loop = true;
+            audioSource.volume = musicVolume;
+            audioSource.Play();
+        }
         lastEnemySpawnTime = -1f;
         if (spawnEventsList != null && spawnEventsList.spawnEvents != null)
         {
@@ -81,40 +80,45 @@ public class BossFight : MonoBehaviour
 
     void Update()
     {
-        if (!fightStarted || fightEnded || endingSequenceHasBegun)
+        if (!fightStarted || fightEnded)
         {
             return;
         }
-
-        elapsedTime += Time.deltaTime;
-
-        while (nextEventIndex < spawnEventsList.spawnEvents.Count &&
-               elapsedTime >= spawnEventsList.spawnEvents[nextEventIndex].time)
+        if (!endingSequenceHasBegun)
         {
-            ProcessSpawnEvent(spawnEventsList.spawnEvents[nextEventIndex]);
-            nextEventIndex++;
+            elapsedTime += Time.deltaTime;
+            while (spawnEventsList != null && nextEventIndex < spawnEventsList.spawnEvents.Count &&
+                   elapsedTime >= spawnEventsList.spawnEvents[nextEventIndex].time)
+            {
+                ProcessSpawnEvent(spawnEventsList.spawnEvents[nextEventIndex]);
+                nextEventIndex++;
+            }
         }
-
         if (!endingSequenceHasBegun)
         {
             bool shouldStartEndSequence = false;
-
-            if (lastEnemySpawnTime >= 0)
+            if (spawnEventsList != null)
             {
-                if (elapsedTime >= lastEnemySpawnTime && nextEventIndex >= spawnEventsList.spawnEvents.Count)
+                if (lastEnemySpawnTime >= 0)
                 {
-                    shouldStartEndSequence = true;
+                    if (elapsedTime >= lastEnemySpawnTime && nextEventIndex >= spawnEventsList.spawnEvents.Count)
+                    {
+                        shouldStartEndSequence = true;
+                    }
+                }
+                else
+                {
+                    if (nextEventIndex >= spawnEventsList.spawnEvents.Count)
+                    {
+                        shouldStartEndSequence = true;
+                    }
                 }
             }
             else
             {
-                if (nextEventIndex >= spawnEventsList.spawnEvents.Count)
-                {
-                    shouldStartEndSequence = true;
-                }
+                 shouldStartEndSequence = true;
             }
-
-            if (shouldStartEndSequence || GameManager.Instance.skipFight)
+            if (shouldStartEndSequence || (GameManager.Instance != null && GameManager.Instance.skipFight))
             {
                 endingSequenceHasBegun = true;
                 StartCoroutine(InitiateEndFightDelay(3.0f));
@@ -149,53 +153,49 @@ public class BossFight : MonoBehaviour
         {
             yield break;
         }
-
-        originalBossPosition = bossSpriteRenderer.transform.localPosition;
         float elapsed = 0f;
-
         while (elapsed < shakeDuration)
         {
             float x = Random.Range(-1f, 1f) * shakeIntensity;
             float y = Random.Range(-1f, 1f) * shakeIntensity;
-
             bossSpriteRenderer.transform.localPosition = originalBossPosition + new Vector3(x, y, 0);
-
             elapsed += Time.deltaTime;
             yield return null;
         }
-
         bossSpriteRenderer.transform.localPosition = originalBossPosition;
     }
 
     private IEnumerator InitiateEndFightDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
         if (bossSpriteRenderer != null)
         {
             StartCoroutine(ShakeBoss());
         }
-
         fightEnded = true;
-        fightStarted = false;
-
         if (audioSource != null && audioSource.isPlaying)
         {
             audioSource.Stop();
         }
-
         if (GameManager.Instance != null)
         {
             GameManager.Instance.FoughtBoss();
         }
-
         if (fadeObject != null)
         {
             Fade fade = fadeObject.GetComponent<Fade>();
             if (fade != null)
             {
-                fade.FadeIn("Game");
+                fade.FadeIn("Game"); 
             }
+            else
+            {
+                 SceneManager.LoadScene("Game");
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("Game");
         }
     }
 }

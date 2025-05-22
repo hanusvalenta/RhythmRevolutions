@@ -8,19 +8,15 @@ public class HealthText : MonoBehaviour
     private TextMeshProUGUI healthText;
     public float playerHealth;
     public string deathSceneName = "DeathScene";
-
     public GameObject fadeObject;
-
     public SpriteRenderer playerSpriteRenderer;
     private Vector3 originalPosition;
     public float shakeIntensity = 0.1f;
     public float shakeDuration = 0.2f;
-
     public Sprite playerHeartDeadSprite;
-
     public AudioClip playerDieSound;
-
     public AudioClip playerDamageSound;
+    private AudioSource sfxAudioSource;
 
     void Start()
     {
@@ -41,6 +37,12 @@ public class HealthText : MonoBehaviour
         {
             originalPosition = playerSpriteRenderer.transform.position;
         }
+
+        GameObject sfxManagerObject = GameObject.Find("SFXManager");
+        if (sfxManagerObject != null)
+        {
+            sfxAudioSource = sfxManagerObject.GetComponent<AudioSource>();
+        }
     }
 
     void UpdateHealthText()
@@ -53,7 +55,11 @@ public class HealthText : MonoBehaviour
         playerHealth -= damage;
         UpdateHealthText();
 
-        if (playerDamageSound != null)
+        if (playerDamageSound != null && sfxAudioSource != null)
+        {
+            sfxAudioSource.PlayOneShot(playerDamageSound);
+        }
+        else if (playerDamageSound != null)
         {
             AudioSource.PlayClipAtPoint(playerDamageSound, Camera.main.transform.position);
         }
@@ -93,12 +99,17 @@ public class HealthText : MonoBehaviour
             {
                 if (script != this)
                 {
-                    script.enabled = false;
                 }
             }
+            PlayerHeartControler playerMovement = playerHeart.GetComponent<PlayerHeartControler>();
+            if(playerMovement != null) playerMovement.enabled = false;
         }
 
-        if (playerDieSound != null)
+        if (playerDieSound != null && sfxAudioSource != null)
+        {
+            sfxAudioSource.PlayOneShot(playerDieSound);
+        }
+        else if (playerDieSound != null)
         {
             AudioSource.PlayClipAtPoint(playerDieSound, Camera.main.transform.position);
         }
@@ -120,13 +131,10 @@ public class HealthText : MonoBehaviour
         {
             float x = Random.Range(-1f, 1f) * shakeIntensity;
             float y = Random.Range(-1f, 1f) * shakeIntensity;
-
             playerSpriteRenderer.transform.position = originalPosition + new Vector3(x, y, 0);
-
             elapsed += Time.deltaTime;
             yield return null;
         }
-
         playerSpriteRenderer.transform.position = originalPosition;
     }
 }

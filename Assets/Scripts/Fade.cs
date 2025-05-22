@@ -7,17 +7,16 @@ public class AudioFader
 {
     public static IEnumerator FadeOut(AudioSource audioSource, float fadeTime)
     {
-        if (audioSource == null) yield break;
+        if (audioSource == null || audioSource.volume == 0) yield break;
         float startVolume = audioSource.volume;
         if (fadeTime <= 0) fadeTime = 0.001f;
-
-        while (audioSource.volume > 0)
+        while (audioSource.volume > 0.001f)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / fadeTime;
+            audioSource.volume -= startVolume * Time.unscaledDeltaTime / fadeTime;
             yield return null;
         }
+        audioSource.volume = 0;
         audioSource.Stop();
-        audioSource.volume = startVolume;
     }
 
     public static IEnumerator FadeIn(AudioSource audioSource, float targetVolume, float fadeTime)
@@ -26,14 +25,13 @@ public class AudioFader
         audioSource.volume = 0;
         if (!audioSource.isPlaying)
         {
-            audioSource.Play();
+            if(audioSource.clip != null) audioSource.Play();
         }
         if (fadeTime <= 0) fadeTime = 0.001f;
         targetVolume = Mathf.Clamp01(targetVolume);
-
-        while (audioSource.volume < targetVolume)
+        while (audioSource.volume < targetVolume - 0.001f)
         {
-            audioSource.volume += targetVolume * Time.deltaTime / fadeTime;
+            audioSource.volume += targetVolume * Time.unscaledDeltaTime / fadeTime;
             yield return null;
         }
         audioSource.volume = targetVolume;
@@ -43,58 +41,70 @@ public class AudioFader
 public class Fade : MonoBehaviour
 {
     public Animator fadeAnimator;
-    public string fadeInTrigger = "Start";
-    public string sceneToLoadName = "Game";
-    public float fadeTime = 1f;
+    public string fadeInAnimatorTriggerName = "Start";
+    public string sceneToLoadName;
+    public float defaultFadeDuration = 1f;
     public string gameSceneName = "Game";
     public AudioSource musicAudioSource;
 
-    public void FadeToScene(string sceneToLoad)
+    public void FadeToSceneWithDefaultDuration(string sceneName)
     {
-        this.sceneToLoadName = sceneToLoad;
-        StartCoroutine(PerformFadeWithAudio(sceneToLoad));
+        FadeToScene(sceneName, defaultFadeDuration);
+    }
+    
+    public void FadeToScene(string sceneName, float duration)
+    {
+        this.sceneToLoadName = sceneName;
+        StartCoroutine(PerformFadeSequence(duration));
     }
 
-    IEnumerator PerformFadeWithAudio(string targetSceneName)
+    public void FadeIn(string sceneToLoad)
     {
-        if (musicAudioSource != null)
+        FadeToScene(sceneToLoad, defaultFadeDuration);
+    }
+
+    IEnumerator PerformFadeSequence(float fadeDuration)
+    {
+        if (musicAudioSource != null && musicAudioSource.isPlaying)
         {
-            StartCoroutine(AudioFader.FadeOut(musicAudioSource, fadeTime));
+            StartCoroutine(AudioFader.FadeOut(musicAudioSource, fadeDuration));
         }
         else
         {
             AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
-            if (allAudioSources != null && allAudioSources.Length > 0)
+            if (allAudioSources != null)
             {
                 foreach (AudioSource audioSrc in allAudioSources)
                 {
-                    StartCoroutine(AudioFader.FadeOut(audioSrc, fadeTime));
+                    if (audioSrc.isPlaying)
+                    {
+                       StartCoroutine(AudioFader.FadeOut(audioSrc, fadeDuration));
+                    }
                 }
             }
         }
-
         if (fadeAnimator != null)
         {
-            fadeAnimator.SetTrigger(fadeInTrigger);
+            fadeAnimator.SetTrigger(fadeInAnimatorTriggerName);
         }
-
         if (GameManager.Instance != null)
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-            if (playerObject != null && SceneManager.GetActiveScene().name == gameSceneName)
+            if (playerObject != null && SceneManager.GetActiveScene().name == gameSceneName) 
             {
                 GameManager.lastPlayerPosition = playerObject.transform.position;
                 GameManager.lastPlayerScene = SceneManager.GetActiveScene().name;
             }
         }
-
-        float actualFadeTime = fadeTime > 0 ? fadeTime : 0.001f;
+        float actualFadeTime = Mathf.Max(0.001f, fadeDuration);
         yield return new WaitForSeconds(actualFadeTime);
-
-        SceneManager.LoadScene(targetSceneName);
+        if (!string.IsNullOrEmpty(sceneToLoadName))
+        {
+            SceneManager.LoadScene(sceneToLoadName);
+        }
     }
 
-    public void TriggerFadeOutAudio(AudioSource audioSourceToFade, float duration)
+    public void TriggerFadeOutSpecificAudio(AudioSource audioSourceToFade, float duration)
     {
         if (duration <= 0) duration = 0.001f;
         if (audioSourceToFade != null)
@@ -103,17 +113,12 @@ public class Fade : MonoBehaviour
         }
     }
 
-    public void TriggerFadeInAudio(AudioSource audioSourceToFade, float targetVolume, float duration)
+    public void TriggerFadeInSpecificAudio(AudioSource audioSourceToFade, float targetVolume, float duration)
     {
         if (duration <= 0) duration = 0.001f;
         if (audioSourceToFade != null)
         {
             StartCoroutine(AudioFader.FadeIn(audioSourceToFade, targetVolume, duration));
         }
-    }
-
-    public void FadeIn(string sceneToLoad)
-    {
-        FadeToScene(sceneToLoad);
     }
 }
