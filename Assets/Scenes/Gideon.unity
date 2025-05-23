@@ -2856,7 +2856,7 @@ MonoBehaviour:
   shakeIntensity: 0.1
   shakeDuration: 0.5
   bossMusic: {fileID: 8300000, guid: 2cb34cbd031902d44988b502294f22da, type: 3}
-  musicVolume: 0.5
+  musicVolume: 0.1
 --- !u!4 &1657523891
 Transform:
   m_ObjectHideFlags: 0

@@ -41,7 +41,7 @@ public class BossFight : MonoBehaviour
             audioSource.clip = bossMusic;
             audioSource.loop = true;
             audioSource.volume = musicVolume;
-            if (!audioSource.isPlaying && fightStarted)
+            if (!audioSource.isPlaying)
             {
                 audioSource.Play();
             }
