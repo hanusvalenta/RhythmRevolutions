@@ -2538,6 +2538,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 238955789}
+  - {fileID: 345830464}
+  - {fileID: 1129957832}
+  - {fileID: 1141016049}
+  - {fileID: 1814250145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &267924003
@@ -3720,6 +3724,76 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &345830463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 249755887}
+    m_Modifications:
+    - target: {fileID: 4278802189180541299, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_Name
+      value: BossBarrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: barrierText
+      value: You can't pass here yet! Defeat or spare Knives first!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: bossNameToCheck
+      value: Knives
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2625732
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.72180176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3300575
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+--- !u!4 &345830464 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+  m_PrefabInstance: {fileID: 345830463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &346242501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11675,6 +11749,146 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8490647599299950515, guid: 77d943453babc1d4e818e77bf359b842, type: 3}
   m_PrefabInstance: {fileID: 1128480571}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1129957831
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 249755887}
+    m_Modifications:
+    - target: {fileID: 4278802189180541299, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_Name
+      value: BossBarrier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: barrierText
+      value: You can't pass here yet! Defeat or spare Patel first!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: bossNameToCheck
+      value: Patel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.38739
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -36.331787
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3300575
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+--- !u!4 &1129957832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+  m_PrefabInstance: {fileID: 1129957831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1141016048
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 249755887}
+    m_Modifications:
+    - target: {fileID: 4278802189180541299, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_Name
+      value: BossBarrier (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: barrierText
+      value: You can't pass here yet! Defeat or spare Lucas first!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: bossNameToCheck
+      value: Lucas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 42.097412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.421814
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3300575
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+--- !u!4 &1141016049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+  m_PrefabInstance: {fileID: 1141016048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1141721989
 GameObject:
   m_ObjectHideFlags: 0
@@ -18730,6 +18944,84 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1814250144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 249755887}
+    m_Modifications:
+    - target: {fileID: 4278802189180541299, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_Name
+      value: BossBarrier (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: barrierText
+      value: You can't pass here yet! Defeat or spare Gideon first!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164806277038434198, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: bossNameToCheck
+      value: Gideon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.236585
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.96611
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 56.507385
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -35.700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3300575
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+--- !u!4 &1814250145 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7744959244146461678, guid: 18c4ac80bd6352047a2f9eda6547ec59, type: 3}
+  m_PrefabInstance: {fileID: 1814250144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1816576088
 GameObject:
   m_ObjectHideFlags: 0
