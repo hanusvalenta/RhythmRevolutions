@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public float PlayerHealth = 30;
+    public float PlayerHealth = 20;
 
     public bool PatelSpared = false;
     public bool PatelFought = false;
