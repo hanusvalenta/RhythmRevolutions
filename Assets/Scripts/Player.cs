@@ -113,6 +113,10 @@ public class Player : MonoBehaviour
             movement = Vector2.zero;
         }
         movement = movement.normalized;
+        if (playerSpriteRenderer != null)
+        {
+            playerSpriteRenderer.enabled = !hasBox;
+        }
         if (SceneManager.GetActiveScene().name == gameSceneName && Input.GetKeyDown(KeyCode.Escape))
         {
             if (fadeObject != null)
