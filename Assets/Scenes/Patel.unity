@@ -2824,7 +2824,7 @@ MonoBehaviour:
   bossSpriteRenderer: {fileID: 230839801}
   shakeIntensity: 0.1
   shakeDuration: 0.5
-  bossMusic: {fileID: 8300000, guid: aeea999c718d17e419ea82ba67678703, type: 3}
+  bossMusic: {fileID: 8300000, guid: b559066a995e6cb4cbf694b1c638cba0, type: 3}
   musicVolume: 0.01
 --- !u!4 &1657523891
 Transform:
@@ -3900,6 +3900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fightButton: {fileID: 755556438}
   spareButton: {fileID: 344995171}
+  startButton: {fileID: 0}
   fightSquare: {fileID: 1855071657}
   fightSquareFadeDuration: 1.5
   playerHeartPrefab: {fileID: 6917283447140728380, guid: 160dfba75b5b30543a87840225fe2aa1, type: 3}

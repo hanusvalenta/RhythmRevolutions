@@ -43,6 +43,7 @@ public class BossFight : MonoBehaviour
             audioSource.volume = musicVolume;
             if (!audioSource.isPlaying && fightStarted)
             {
+                audioSource.Play();
             }
         }
     }
