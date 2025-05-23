@@ -313,7 +313,7 @@ public class Player : MonoBehaviour
                     break;
                 case "Wallace":
                     conditionMet = GameManager.Instance != null && (GameManager.Instance.WallaceFought || GameManager.Instance.WallaceSpared);
-                    dialogue = conditionMet ? "Were done here, Scott. Now go find Ramona." : "Hey, Scott! Im here to help you out.        Youre late to meet Ramona in the park.         Lets learn some moves before you go tho You might need em.";
+                    dialogue = conditionMet ? "Were done here, Scott. Now go find Ramona." : "Hey, Scott! Im here to help you out. Youre late to meet Ramona in the park. Lets learn some moves before you go tho You might need em.";
                     if (!conditionMet) sceneToLoad = "Wallace";
                     break;
                 case "Knives":
