@@ -51,6 +51,8 @@ public class Spike : MonoBehaviour
             }
             PlayerHeartControler playerMovement = other.GetComponent<PlayerHeartControler>();
             if(playerMovement != null) playerMovement.enabled = false;
+
+            GameManager.respawnAtCheckpoint = true;
         }
     }
 

@@ -56,7 +56,13 @@ public class Player : MonoBehaviour
                  audioSource.Play();
             }
         }
-        if (GameManager.Instance != null && GameManager.lastPlayerPosition.HasValue)
+        
+        if (GameManager.respawnAtCheckpoint)
+        {
+            MoveToNearestRespawnPoint();
+            GameManager.respawnAtCheckpoint = false;
+        }
+        else if (GameManager.Instance != null && GameManager.lastPlayerPosition.HasValue)
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
             if (currentSceneName == gameSceneName && GameManager.lastPlayerScene == gameSceneName)
@@ -68,19 +74,19 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                     transform.position = GameManager.lastPlayerPosition.Value;
+                    transform.position = GameManager.lastPlayerPosition.Value;
                 }
-                GameManager.lastPlayerPosition = null; 
+                GameManager.lastPlayerPosition = null;
                 GameManager.lastPlayerScene = null;
             }
             else if (GameManager.lastPlayerScene != currentSceneName)
             {
                 GameManager.lastPlayerPosition = null;
                 GameManager.lastPlayerScene = null;
-                 if (GameManager.spawnPlayerPosition.HasValue && currentSceneName == gameSceneName)
+                if (GameManager.spawnPlayerPosition.HasValue && currentSceneName == gameSceneName)
                 {
-                     transform.position = GameManager.spawnPlayerPosition.Value;
-                     GameManager.spawnPlayerPosition = null;
+                    transform.position = GameManager.spawnPlayerPosition.Value;
+                    GameManager.spawnPlayerPosition = null;
                 }
             }
         }

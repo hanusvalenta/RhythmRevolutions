@@ -1605,7 +1605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6331451924963695902, guid: fbbb2115b2b9a5a4696b916d9f2f1255, type: 3}
       propertyPath: skipIntro
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14076,7 +14076,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337062440}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -28655,11 +28655,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3754855400118834648, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -948.6
+      value: -998.59
       objectReference: {fileID: 0}
     - target: {fileID: 3754855400118834648, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -517.4
+      value: -585.89
       objectReference: {fileID: 0}
     - target: {fileID: 3754855400118834648, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: m_LocalPosition.z

@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool respawnAtCheckpoint = false;
     public static GameManager Instance;
 
     public float PlayerHealth = 20;
