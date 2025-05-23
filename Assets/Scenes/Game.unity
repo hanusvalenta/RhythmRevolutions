@@ -654,6 +654,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8490647599299950515, guid: 77d943453babc1d4e818e77bf359b842, type: 3}
   m_PrefabInstance: {fileID: 32618257}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &34931356
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3899721925464475756, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: openText
+      value: 'You put in the gey and the gate Opens.Assets\Scripts\GameManager.cs(82,1):
+        error CS1022: Type or namespace definition, or end-of-file expected  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -902.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -552.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171710153055744452, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_Name
+      value: Gate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
 --- !u!1001 &43353285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9703,6 +9765,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &905861107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3899721925464475756, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: openText
+      value: 'You put in the gey and the gate Opens.Assets\Scripts\GameManager.cs(82,1):
+        error CS1022: Type or namespace definition, or end-of-file expected  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -939.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -552.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171710153055744452, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
+      propertyPath: m_Name
+      value: Gate (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
 --- !u!1001 &916422039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26096,11 +26220,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1619026196626874224, guid: 75e95f2c608b7c2468daeed3117a7f69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -934.54
+      value: -933.44
       objectReference: {fileID: 0}
     - target: {fileID: 1619026196626874224, guid: 75e95f2c608b7c2468daeed3117a7f69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -549.1
+      value: -545.64
       objectReference: {fileID: 0}
     - target: {fileID: 1619026196626874224, guid: 75e95f2c608b7c2468daeed3117a7f69, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29236,3 +29360,5 @@ SceneRoots:
   - {fileID: 5362733616662427814}
   - {fileID: 491863272}
   - {fileID: 1667875595}
+  - {fileID: 34931356}
+  - {fileID: 905861107}
