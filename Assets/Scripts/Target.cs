@@ -1,7 +1,9 @@
 using UnityEngine;
 
+
 public class Target : MonoBehaviour
 {
+    public static float deactivationSuppressedUntil = 0f;
     public bool IsActive { get; private set; } = false;
     public KeyCode activationKey;
     private SpriteRenderer spriteRenderer;
@@ -9,10 +11,7 @@ public class Target : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        else
-        {
-            UpdateColor();
-        }
+        UpdateColor();
     }
 
     void Update()
@@ -33,6 +32,13 @@ public class Target : MonoBehaviour
 
     void Deactivate()
     {
+        float now = Time.time;
+        if (now < deactivationSuppressedUntil)
+        {
+            float delay = deactivationSuppressedUntil - now;
+            Invoke(nameof(Deactivate), delay);
+            return;
+        }
         IsActive = false;
         UpdateColor();
     }

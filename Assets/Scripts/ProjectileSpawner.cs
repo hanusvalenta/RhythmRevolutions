@@ -98,6 +98,7 @@ public class SpawnerController : MonoBehaviour
                                    isHolding = true;
                                    holdStartTime = elapsedTime;
                                    holdEndTime = elapsedTime + data.holdDuration;
+                                   Target.deactivationSuppressedUntil = Time.time + 5f;
                                    Projectile projectileComponent = currentProjectile.GetComponent<Projectile>();
                                    if (projectileComponent != null)
                                    {
