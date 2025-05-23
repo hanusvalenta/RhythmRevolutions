@@ -213,7 +213,7 @@ MonoBehaviour:
     textToShow: 
   - time: 28.5
     spawnerIndex: 0
-    holdNote: 1
+    holdNote: 0
     holdDuration: 1.1
     isTextEvent: 0
     textToShow: 

@@ -135,7 +135,7 @@ MonoBehaviour:
     textToShow: 
   - time: 19.2
     spawnerIndex: 2
-    holdNote: 1
+    holdNote: 0
     holdDuration: 0.9
     isTextEvent: 0
     textToShow: 
@@ -165,7 +165,7 @@ MonoBehaviour:
     textToShow: 
   - time: 24
     spawnerIndex: 0
-    holdNote: 1
+    holdNote: 0
     holdDuration: 1.1
     isTextEvent: 0
     textToShow: 
@@ -177,7 +177,7 @@ MonoBehaviour:
     textToShow: Now’s your opening—take it!
   - time: 26.2
     spawnerIndex: 1
-    holdNote: 1
+    holdNote: 0
     holdDuration: 1.4
     isTextEvent: 0
     textToShow: 
@@ -189,7 +189,7 @@ MonoBehaviour:
     textToShow: 
   - time: 28.6
     spawnerIndex: 2
-    holdNote: 1
+    holdNote: 0
     holdDuration: 1.3
     isTextEvent: 0
     textToShow: 
@@ -249,7 +249,7 @@ MonoBehaviour:
     textToShow: 
   - time: 40.6
     spawnerIndex: 1
-    holdNote: 1
+    holdNote: 0
     holdDuration: 1
     isTextEvent: 0
     textToShow: 
@@ -273,7 +273,7 @@ MonoBehaviour:
     textToShow: 
   - time: 45.4
     spawnerIndex: 0
-    holdNote: 1
+    holdNote: 0
     holdDuration: 1.4
     isTextEvent: 0
     textToShow: 
@@ -285,7 +285,7 @@ MonoBehaviour:
     textToShow: 
   - time: 47.8
     spawnerIndex: 1
-    holdNote: 1
+    holdNote: 0
     holdDuration: 1.5
     isTextEvent: 0
     textToShow: 

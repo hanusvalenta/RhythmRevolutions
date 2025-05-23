@@ -359,7 +359,7 @@ Transform:
   m_GameObject: {fileID: 230839800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1632, y: 0.7758, z: 0.6}
+  m_LocalPosition: {x: 6.84, y: 0.7758, z: 0.6}
   m_LocalScale: {x: 0.763422, y: 0.763422, z: 0.763422}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3896,6 +3896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fightButton: {fileID: 755556438}
   spareButton: {fileID: 344995171}
+  startButton: {fileID: 0}
   fightSquare: {fileID: 1855071657}
   fightSquareFadeDuration: 1.5
   playerHeartPrefab: {fileID: 6917283447140728380, guid: 160dfba75b5b30543a87840225fe2aa1, type: 3}

@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+  m_Color: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -588,6 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fightButton: {fileID: 0}
   spareButton: {fileID: 0}
+  startButton: {fileID: 0}
   fightSquare: {fileID: 0}
   fightSquareFadeDuration: 3
   playerHeartPrefab: {fileID: 0}
