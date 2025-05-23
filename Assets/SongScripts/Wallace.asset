@@ -28,8 +28,8 @@ MonoBehaviour:
       get damage.
   - time: 2
     spawnerIndex: 2
-    holdNote: 1
-    holdDuration: 1
+    holdNote: 0
+    holdDuration: 0
     isTextEvent: 0
     textToShow: 
   - time: 2.3
