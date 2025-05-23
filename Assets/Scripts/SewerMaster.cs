@@ -19,6 +19,14 @@ public class SewerMaster : MonoBehaviour
         CheckAllSeversInStateOne();
     }
 
+     void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            ResetAllSevers();
+        }
+    }
+
     public void ResetAllSevers()
     {
         foreach (Sever sever in severs)
