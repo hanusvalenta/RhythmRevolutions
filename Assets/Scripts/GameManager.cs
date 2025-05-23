@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public bool skipFight = false;
     public bool skipIntro = false;
 
+    public bool hasKey1 = false;
+
     private void Awake()
     {
         if (Instance == null)

@@ -347,7 +347,7 @@ public class Player : MonoBehaviour
                             dialogue = "You did it Scott! You fought some of my exes! Now we can be together! Mwah!";
                         }
                     } else {
-                        dialogue = "You did it Scott! You fought all of my exes! Now we can be together! Mwah!";
+                        dialogue = "You did it Scott! You fought some of my exes! Now we can be together! Mwah!";
                     }
                     sceneToLoad = "Win";
                     break;
