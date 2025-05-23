@@ -122,7 +122,7 @@ public class BossFight : MonoBehaviour
             }
             if (shouldStartEndSequence || (GameManager.Instance != null && GameManager.Instance.skipFight))
             {
-                GameManager.Instance.PlayerHealth =+ 10;
+                GameManager.Instance.PlayerHealth += 10;
                 endingSequenceHasBegun = true;
                 StartCoroutine(InitiateEndFightDelay(3.0f));
             }
