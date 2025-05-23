@@ -336,7 +336,19 @@ public class Player : MonoBehaviour
                     if (!conditionMet) sceneToLoad = "Gideon";
                     break;
                 case "Ramona":
-                    dialogue = "You did it Scott! You fought all of my exes! Now we can be together! Mwah!";
+                    if (GameManager.Instance != null) {
+                        bool sparedAll = GameManager.Instance.PatelSpared && GameManager.Instance.WallaceSpared && GameManager.Instance.KnivesSpared && GameManager.Instance.LucasSpared && GameManager.Instance.GideonSpared;
+                        bool foughtAll = GameManager.Instance.PatelFought && GameManager.Instance.WallaceFought && GameManager.Instance.KnivesFought && GameManager.Instance.LucasFought && GameManager.Instance.GideonFought;
+                        if (sparedAll) {
+                            dialogue = "Scott, you spared everyone... You really are a good person! Let's be together! <3";
+                        } else if (foughtAll) {
+                            dialogue = "You fought all of my exes, Scott! I guess that's one way to do it... Now we can be together!";
+                        } else {
+                            dialogue = "You did it Scott! You fought some of my exes! Now we can be together! Mwah!";
+                        }
+                    } else {
+                        dialogue = "You did it Scott! You fought all of my exes! Now we can be together! Mwah!";
+                    }
                     sceneToLoad = "Win";
                     break;
                 case "Cat":
