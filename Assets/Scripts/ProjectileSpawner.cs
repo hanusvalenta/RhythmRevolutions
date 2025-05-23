@@ -86,10 +86,6 @@ public class SpawnerController : MonoBehaviour
                      {
                             textBox.ShowText(data.textToShow);
                      }
-                     else
-                     {
-                            Debug.LogWarning("TextBox not assigned to SpawnerController.");
-                     }
               }
               else
               {

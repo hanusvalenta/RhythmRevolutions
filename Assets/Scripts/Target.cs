@@ -9,10 +9,6 @@ public class Target : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null)
-        {
-            Debug.LogError("SpriteRenderer not found on the Target object!");
-        }
         else
         {
             UpdateColor();
