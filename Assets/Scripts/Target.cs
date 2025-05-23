@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public static float deactivationSuppressedUntil = 0f;
+    private float deactivationSuppressedUntil = 0f;
     public bool IsActive { get; private set; } = false;
     public KeyCode activationKey;
     private SpriteRenderer spriteRenderer;
@@ -22,12 +22,20 @@ public class Target : MonoBehaviour
         }
     }
 
-    void Activate()
+    public void Activate(float holdDuration = 0f)
     {
         IsActive = true;
         UpdateColor();
 
-        Invoke(nameof(Deactivate), 0.2f);
+        if (holdDuration > 0f)
+        {
+            deactivationSuppressedUntil = Time.time + holdDuration;
+            Invoke(nameof(Deactivate), holdDuration);
+        }
+        else
+        {
+            Invoke(nameof(Deactivate), 0.2f);
+        }
     }
 
     void Deactivate()
