@@ -664,8 +664,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3899721925464475756, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
       propertyPath: openText
-      value: 'You put in the gey and the gate Opens.Assets\Scripts\GameManager.cs(82,1):
-        error CS1022: Type or namespace definition, or end-of-file expected  '
+      value: You put in the gey and the gate Opens.
       objectReference: {fileID: 0}
     - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9775,8 +9774,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3899721925464475756, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
       propertyPath: openText
-      value: 'You put in the gey and the gate Opens.Assets\Scripts\GameManager.cs(82,1):
-        error CS1022: Type or namespace definition, or end-of-file expected  '
+      value: You put in the gey and the gate Opens.
       objectReference: {fileID: 0}
     - target: {fileID: 8137795967585376458, guid: 884fa796a061f4840886a4fb34e2f8d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28857,6 +28855,14 @@ PrefabInstance:
       propertyPath: moveUpSprite3
       value: 
       objectReference: {fileID: 21300000, guid: 8355f42efce56264dbfa607fd07da453, type: 3}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: moveDownSprite2
+      value: 
+      objectReference: {fileID: 21300000, guid: 74cbb74bcc8d2844bbab4758489689ba, type: 3}
+    - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
+      propertyPath: moveDownSprite3
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c6af042730d5de4b97b648b99e45498, type: 3}
     - target: {fileID: 5622590287958396062, guid: b9d25782e982c1b46ae37fb1b414c538, type: 3}
       propertyPath: interactionBubble
       value: 
