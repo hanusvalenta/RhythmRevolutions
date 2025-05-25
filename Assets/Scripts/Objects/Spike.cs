@@ -11,6 +11,7 @@ public class Spike : MonoBehaviour
     private float shakeIntensity;
     private AudioSource sfxAudioSource;
 
+    // Inicializace, najde audio source pro zvuk smrti hráče
     void Start()
     {
         GameObject sfxManagerObject = GameObject.Find("SFXManager");
@@ -20,6 +21,7 @@ public class Spike : MonoBehaviour
         }
     }
 
+    // Detekuje kolizi s hráčem, spustí animaci otřesu, zvuk a případně respawn
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -56,6 +58,7 @@ public class Spike : MonoBehaviour
         }
     }
 
+    // Animuje otřes objektu při zásahu
     IEnumerator Shake(Transform objectToShake)
     {
         Vector3 shakeOriginalPosition = objectToShake.position;

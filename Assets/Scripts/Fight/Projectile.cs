@@ -10,11 +10,13 @@ public class Projectile : MonoBehaviour
     private bool isHoldNote = false;
     private Vector3 endPosition;
 
+    // Inicializace projektilu
     void Start()
     {
         endPosition = transform.position;
     }
 
+    // Nastaví projektil jako "hold note" s daným trváním
     public void InitializeHold(float duration)
     {
         isHoldNote = true;
@@ -32,6 +34,7 @@ public class Projectile : MonoBehaviour
         holdIndicatorLine.material = lineMaterial;
     }
 
+    // Hlavní smyčka pohybu projektilu a logika pro "hold note"
     void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
@@ -70,6 +73,7 @@ public class Projectile : MonoBehaviour
         isHoldNote = false;
     }
 
+    // Detekuje zásah cíle, vyhodnocuje úspěch a případně způsobí poškození hráči
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Target"))
@@ -87,6 +91,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    // Odebere hráči životy při zásahu projektilu
     void PlayerTakeDamage()
     {
         GameObject playerHealthTextObject = GameObject.Find("PlayerHealth");

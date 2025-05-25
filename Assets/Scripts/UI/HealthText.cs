@@ -18,6 +18,7 @@ public class HealthText : MonoBehaviour
     public AudioClip playerDamageSound;
     private AudioSource sfxAudioSource;
 
+    // Inicializace textu zdraví, najde potřebné komponenty
     void Start()
     {
         GameObject gameManagerObj = GameObject.Find("GameData");
@@ -50,6 +51,7 @@ public class HealthText : MonoBehaviour
         healthText.text = "Health: " + playerHealth;
     }
 
+    // Odebere hráči životy, spustí animaci a zvuk poškození, případně smrt
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;

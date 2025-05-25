@@ -13,6 +13,7 @@ public class Sever : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // Detekuje kolizi s hráčem, mění stav objektu podle počtu kolizí
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -34,6 +35,7 @@ public class Sever : MonoBehaviour
         }
     }
 
+    // Resetuje stavy objektu na výchozí hodnoty
     public void ResetStates()
     {
         collisionCount = 0;

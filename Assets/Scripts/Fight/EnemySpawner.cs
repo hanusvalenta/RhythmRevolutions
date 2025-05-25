@@ -7,6 +7,7 @@ using UnityEngine;
   public List<GameObject> enemyPrefabs;
  
 
+  // Vytvoří nového nepřítele na pozici spawneru
   public GameObject SpawnEnemy(int enemyIndex, Quaternion rotation)
   {
     if (enemyIndex >= 0 && enemyIndex < enemyPrefabs.Count)

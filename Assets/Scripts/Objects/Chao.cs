@@ -8,6 +8,7 @@ public class Chao : MonoBehaviour
     public float fadeDuration = 1f;
     public string noBoxText = "You need the box to defeat me! Go find it!";
 
+    // Detekuje kolizi s hráčem, kontroluje zda má hráč krabici, případně spustí porážku
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -24,6 +25,7 @@ public class Chao : MonoBehaviour
         }
     }
 
+    // Zpracuje porážku hráče, přesune ho na checkpoint nebo zobrazí text
     IEnumerator HandlePlayerDefeat(Player player)
     {
         player.canMove = false;

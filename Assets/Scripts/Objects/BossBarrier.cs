@@ -9,6 +9,7 @@ public class BossBarrier : MonoBehaviour
     public float textDisplayDuration = 2f;
     public string bossNameToCheck;
 
+    // Kontroluje, zda hráč splnil podmínky pro průchod bariérou (porazil/omilostnil bosse)
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -43,6 +44,7 @@ public class BossBarrier : MonoBehaviour
         }
     }
 
+    // Zobrazí text hráči při pokusu o průchod bariérou
     IEnumerator HandleBarrierInteraction(Player player)
     {
         if (player.textBox != null)

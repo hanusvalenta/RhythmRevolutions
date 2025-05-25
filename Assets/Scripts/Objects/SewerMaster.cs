@@ -14,6 +14,7 @@ public class SewerMaster : MonoBehaviour
         gameManager = GameManager.Instance;
     }
 
+    // Kontroluje, zda jsou všechny "severy" ve stavu jedna, případně udělí klíč
     void Update()
     {
         CheckAllSeversInStateOne();
@@ -27,6 +28,7 @@ public class SewerMaster : MonoBehaviour
         }
     }
 
+    // Resetuje všechny "severy" do výchozího stavu
     public void ResetAllSevers()
     {
         foreach (Sever sever in severs)
@@ -35,6 +37,7 @@ public class SewerMaster : MonoBehaviour
         }
     }
 
+    // Kontroluje, zda jsou všechny "severy" ve stavu jedna, pokud ano, udělí hráči klíč
     private void CheckAllSeversInStateOne()
     {
         bool allInStateOne = true;

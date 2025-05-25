@@ -22,6 +22,7 @@ public class Target : MonoBehaviour
         }
     }
 
+    // Aktivuje cíl (target), případně na určitou dobu pro "hold note"
     public void Activate(float holdDuration = 0f)
     {
         IsActive = true;
@@ -38,6 +39,7 @@ public class Target : MonoBehaviour
         }
     }
 
+    // Deaktivuje cíl (target), mění barvu zpět
     void Deactivate()
     {
         float now = Time.time;

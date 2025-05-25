@@ -18,6 +18,7 @@ public class MovingSpawners : MonoBehaviour
         }
     }
 
+    // Pohybuje spawnerem v kruhu kolem cílového objektu
     void Update()
     {
         if (targetObject == null)

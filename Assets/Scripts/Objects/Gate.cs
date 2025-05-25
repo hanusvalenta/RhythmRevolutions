@@ -20,6 +20,7 @@ public class Gate : MonoBehaviour
         gateCollider = GetComponent<Collider2D>();
     }
 
+    // Kontroluje, zda má hráč klíč pro otevření brány
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -51,6 +52,7 @@ public class Gate : MonoBehaviour
         }
     }
 
+    // Zobrazí text hráči při pokusu o průchod zavřenou bránou
     IEnumerator HandleBarrierInteraction(Player player)
     {
         if (player.textBox != null)
@@ -63,6 +65,7 @@ public class Gate : MonoBehaviour
         player.MoveToNearestRespawnPoint();
     }
 
+    // Otevře bránu, zobrazí text a změní sprite
     IEnumerator OpenGate(Player player)
     {
         if (player.textBox != null)

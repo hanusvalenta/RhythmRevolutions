@@ -25,6 +25,7 @@ public class BossFight : MonoBehaviour
     public float musicVolume = 0.75f;
     private AudioSource audioSource;
 
+    // Inicializace boss fightu, nastavuje hudbu a textové pole
     void Start()
     {
         if (textBox == null)
@@ -48,6 +49,7 @@ public class BossFight : MonoBehaviour
         }
     }
 
+    // Spouští boss fight, aktivuje boss sprite a hudbu, inicializuje spawnování nepřátel
     public void StartBossFight()
     {
         fightStarted = true;

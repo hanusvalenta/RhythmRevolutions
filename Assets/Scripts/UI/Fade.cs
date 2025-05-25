@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Pomocná třída pro plynulé zeslabení a zesílení hudby
 public class AudioFader
 {
     public static IEnumerator FadeOut(AudioSource audioSource, float fadeTime)
@@ -38,6 +39,7 @@ public class AudioFader
     }
 }
 
+// Spravuje animace přechodů scén a hudby
 public class Fade : MonoBehaviour
 {
     public Animator fadeAnimator;

@@ -9,6 +9,7 @@ public class Enemy2 : MonoBehaviour
   private Transform playerHeart;
   private float timer;
 
+  // Inicializace, najde hráče a nastaví časovač
   void Start()
   {
     GameObject playerHeartObject = GameObject.FindGameObjectWithTag("Player");
@@ -20,6 +21,7 @@ public class Enemy2 : MonoBehaviour
     timer = 0f;
   }
 
+  // Hlavní smyčka pohybu a životnosti nepřítele
   void Update()
   {
     Move();
@@ -31,6 +33,7 @@ public class Enemy2 : MonoBehaviour
     }
   }
 
+  // Pohyb nepřítele směrem k hráči
   public virtual void Move()
   {
     if (playerHeart != null)
@@ -41,6 +44,7 @@ public class Enemy2 : MonoBehaviour
     }
   }
 
+  // Detekuje kolizi s hráčem, způsobí poškození a zničí nepřítele
   void OnTriggerEnter2D(Collider2D other)
   {
     if (other.CompareTag("Player"))
@@ -50,6 +54,7 @@ public class Enemy2 : MonoBehaviour
     }
   }
 
+  // Odebere hráči životy při zásahu
   void PlayerTakeDamage()
   {
     GameObject playerHealthTextObject = GameObject.Find("PlayerHealth");

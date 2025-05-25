@@ -14,6 +14,7 @@ public class FadeInTMPText : MonoBehaviour
     public float volume = 1f;
     private TextMeshProUGUI tmpText;
 
+    // Inicializace textu "You Died", nastavuje průhlednost a tlačítko
     void Awake()
     {
         tmpText = GetComponent<TextMeshProUGUI>();
@@ -24,6 +25,7 @@ public class FadeInTMPText : MonoBehaviour
         }
     }
 
+    // Spustí animaci zobrazení textu a přehraje zvuk
     void Start()
     {
         StartCoroutine(FadeInText());
@@ -46,6 +48,7 @@ public class FadeInTMPText : MonoBehaviour
         }
     }
 
+    // Animuje postupné zobrazení textu a následně tlačítka
     IEnumerator FadeInText()
     {
         yield return new WaitForSeconds(delayBeforeFade);
@@ -65,6 +68,7 @@ public class FadeInTMPText : MonoBehaviour
         }
     }
 
+    // Nastaví průhlednost textu
     void SetTextAlpha(float alpha)
     {
         if (tmpText == null) return;

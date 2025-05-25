@@ -24,6 +24,7 @@ public class SettingsManager : MonoBehaviour
     const string RESOLUTION_PREF_KEY_REFRESH_RATE = "ResolutionRefreshRate";
     const string FULLSCREEN_PREF_KEY = "FullscreenPreference";
 
+    // Inicializace nastavení zvuku a rozlišení
     void Start()
     {
         if (volumeSlider != null && masterMixer != null)
@@ -61,6 +62,7 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+    // Nastaví hlavní hlasitost ve hře
     public void SetMasterVolume(float volume)
     {
         if (masterMixer != null)
@@ -71,6 +73,7 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+    // Načte uložené nastavení rozlišení obrazovky
     void LoadResolutionSettings()
     {
         if (filteredResolutions == null || filteredResolutions.Count == 0) return;
@@ -128,6 +131,7 @@ public class SettingsManager : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    // Nastaví vybrané rozlišení obrazovky
     public void SetSelectedResolution(int resolutionIndex)
     {
         currentResolutionIndex = resolutionIndex;

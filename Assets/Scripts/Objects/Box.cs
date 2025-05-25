@@ -20,6 +20,7 @@ public class Box : MonoBehaviour
         }
     }
 
+    // Zpracovává interakci hráče s krabicí (zvednutí/položení)
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -40,6 +41,7 @@ public class Box : MonoBehaviour
         }
     }
 
+    // Pokusí se zvednout krabici, pokud je hráč dostatečně blízko
     void TryPickUpBox()
     {
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -71,6 +73,7 @@ public class Box : MonoBehaviour
         }
     }
 
+    // Položí krabici z ruky hráče
     void DropBox()
     {
         if (player != null)

@@ -10,6 +10,7 @@ public class Enemy4 : MonoBehaviour
         
     }
 
+    // Pohybuje nepřítelem směrem nahoru
     public virtual void Move()
     {
         Vector3 newPosition = transform.position;
@@ -23,6 +24,7 @@ public class Enemy4 : MonoBehaviour
         Move();
     }
 
+    // Detekuje kolizi s hráčem, způsobí poškození a zničí nepřítele
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -32,6 +34,7 @@ public class Enemy4 : MonoBehaviour
         }
     }
 
+    // Odebere hráči životy při zásahu
     void PlayerTakeDamage()
     {
         GameObject playerHealthTextObject = GameObject.Find("PlayerHealth");

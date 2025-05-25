@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviour
 
     public TextBox textBox;
 
+    // Inicializace menu, nastavuje tlačítka a texty
     void Start()
     {
         if (textBox == null)
@@ -37,6 +38,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Nastaví tlačítko pro pokračování ve hře
     public void setContinueButton()
     {
         if (startButton != null)
@@ -50,12 +52,14 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Skryje tlačítka v menu
     public void HideButtons()
     {
         fightButton.SetActive(false);
         spareButton.SetActive(false);
     }
 
+    // Spustí akci "spare" pro bosse Patel
     public void SparePattel()
     {
         HideButtons();
@@ -81,6 +85,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Spustí boj s bossem
     public void StartFight()
     {
         HideButtons();
@@ -93,6 +98,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Animuje postupné zobrazení čtverce v menu
     private IEnumerator FadeInSquare(SpriteRenderer sr, float duration)
     {
         Color color = sr.color;

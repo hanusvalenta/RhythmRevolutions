@@ -17,6 +17,7 @@ public class TextBox : MonoBehaviour
     public AudioClip typingSound;
     private AudioSource sfxAudioSource;
 
+    // Inicializace textového pole, nastavuje audio a UI komponenty
     void Start()
     {
         textBoxUI.SetActive(false);
@@ -38,6 +39,7 @@ public class TextBox : MonoBehaviour
         }
     }
 
+    // Zpracovává vstupy hráče pro pokračování v textu nebo přeskočení psaní
     void Update()
     {
         if (isDialogueActive && !isTyping)
@@ -55,6 +57,7 @@ public class TextBox : MonoBehaviour
         }
     }
 
+    // Zobrazí text v textovém poli, rozděluje na stránky
     public void ShowText(string fullText)
     {
         if (isTyping)
@@ -78,6 +81,7 @@ public class TextBox : MonoBehaviour
         }
     }
 
+    // Animuje postupné vypisování textu po znacích
     IEnumerator TypeText(string text)
     {
         isTyping = true;
@@ -103,6 +107,7 @@ public class TextBox : MonoBehaviour
         isTyping = false;
     }
 
+    // Zobrazí další stránku textu nebo skryje textové pole
     void ShowNextPage()
     {
         currentPageIndex++;
